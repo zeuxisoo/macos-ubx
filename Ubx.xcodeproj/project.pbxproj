@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		E6643A2D1DEC39A20050FD3F /* Ubx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ubx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6643A301DEC39A20050FD3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E6643A321DEC39A20050FD3F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E6643A321DEC39A20050FD3F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ubx/Controllers/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		E6643A341DEC39A20050FD3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6643A371DEC39A20050FD3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6643A391DEC39A20050FD3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,13 +53,22 @@
 			isa = PBXGroup;
 			children = (
 				E6643A301DEC39A20050FD3F /* AppDelegate.swift */,
-				E6643A321DEC39A20050FD3F /* HomeViewController.swift */,
+				E6908E961DEEDA2F00C6CDBA /* Controllers */,
 				E6643A341DEC39A20050FD3F /* Assets.xcassets */,
 				E6643A361DEC39A20050FD3F /* Main.storyboard */,
 				E6643A391DEC39A20050FD3F /* Info.plist */,
 			);
 			path = ubx;
 			sourceTree = "<group>";
+		};
+		E6908E961DEEDA2F00C6CDBA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E6643A321DEC39A20050FD3F /* HomeViewController.swift */,
+			);
+			name = Controllers;
+			path = ubx/Controllers;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
