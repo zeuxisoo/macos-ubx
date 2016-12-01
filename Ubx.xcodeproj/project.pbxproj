@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E61AA08E1DF00923009D133A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61AA08D1DF00923009D133A /* Event.swift */; };
 		E6643A311DEC39A20050FD3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6643A301DEC39A20050FD3F /* AppDelegate.swift */; };
 		E6643A331DEC39A20050FD3F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6643A321DEC39A20050FD3F /* HomeViewController.swift */; };
 		E6643A351DEC39A20050FD3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6643A341DEC39A20050FD3F /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E61AA08D1DF00923009D133A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		E6643A2D1DEC39A20050FD3F /* Ubx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ubx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6643A301DEC39A20050FD3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6643A321DEC39A20050FD3F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ubx/Controllers/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -33,6 +35,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E61AA08C1DF008E1009D133A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E61AA08D1DF00923009D133A /* Event.swift */,
+			);
+			name = Models;
+			path = ubx/Models;
+			sourceTree = SOURCE_ROOT;
+		};
 		E6643A241DEC39A20050FD3F = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +63,7 @@
 		E6643A2F1DEC39A20050FD3F /* ubx */ = {
 			isa = PBXGroup;
 			children = (
+				E61AA08C1DF008E1009D133A /* Models */,
 				E6643A301DEC39A20050FD3F /* AppDelegate.swift */,
 				E6908E961DEEDA2F00C6CDBA /* Controllers */,
 				E6643A341DEC39A20050FD3F /* Assets.xcassets */,
@@ -142,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6643A331DEC39A20050FD3F /* HomeViewController.swift in Sources */,
+				E61AA08E1DF00923009D133A /* Event.swift in Sources */,
 				E6643A311DEC39A20050FD3F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
