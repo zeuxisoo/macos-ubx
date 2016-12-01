@@ -13,10 +13,10 @@ class HomeViewController: NSViewController {
     @IBOutlet weak var eventListTableView: NSTableView!
     
     var events = [
-        Event(name: "Test1", date: "1234", status: "4567"),
-        Event(name: "Test2", date: "1234", status: "4567"),
-        Event(name: "Test3", date: "1234", status: "4567"),
-        Event(name: "Test4", date: "1234", status: "4567"),
+        Event(name: "Test1", date: "Date1", status: "Status1"),
+        Event(name: "Test2", date: "Date2", status: "Status2"),
+        Event(name: "Test3", date: "Date3", status: "Status3"),
+        Event(name: "Test4", date: "Date4", status: "Status4"),
     ]
     
     override func viewDidLoad() {

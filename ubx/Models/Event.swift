@@ -9,7 +9,7 @@ class Event: NSObject {
     init(name: String, date: String, status: String) {
         self.name = name
         self.date = date
-        self.status = date
+        self.status = status
     }
     
 }
