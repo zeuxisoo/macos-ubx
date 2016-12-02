@@ -41,9 +41,13 @@ class HomeViewController: NSViewController {
         let auth            = Service.sharedInstance.fetchAuth()
         let performanceList = Service.sharedInstance.fetchPerformanceList(eventId: 30924, pageNo: 1)
         
-        when(fulfilled: auth, performanceList).then { cookie, performances -> Void in
+        when(fulfilled: auth, performanceList).then { cookie, performance -> Void in
             debugPrint(cookie)
-            debugPrint(performances)
+            debugPrint(performance)
+
+            debugPrint("performances: \(performance.performances)")
+            debugPrint("performances count: \(performance.performances?.count)")
+            debugPrint("status: \(performance.status?.count)")
         }.catch { error in
             let alert = NSAlert()
             

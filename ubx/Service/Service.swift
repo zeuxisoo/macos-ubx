@@ -1,10 +1,11 @@
 import Foundation
 import Alamofire
 import PromiseKit
+import AlamofireObjectMapper
 
 class Service {
     
-    public static let sharedInstance = Service()
+    static let sharedInstance = Service()
     
     private var agent: Alamofire.SessionManager?
     
@@ -27,7 +28,7 @@ class Service {
         )
     }
     
-    public func fetchAuth() -> Promise<String> {
+    func fetchAuth() -> Promise<String> {
         return Promise { fulfill, reject in
             self.agent!.request("http://www.urbtix.hk/", method: .get).responseString(completionHandler: { response in
                 switch response.result {
@@ -42,26 +43,25 @@ class Service {
         }
     }
     
-    public func fetchPerformanceList(eventId: Int, pageNo: Int, perPage: Int = 10) -> Promise<String> {
+    func fetchPerformanceList(eventId: Int, pageNo: Int, perPage: Int = 10) -> Promise<PerformanceDataResponse> {
         let timestamp = self.timestamp()
         let targetURL = "https://ticket.urbtix.hk/internet/json/event/\(eventId)/performance/\(perPage)/\(pageNo)/perf.json?locale=zh_TW&\(timestamp)"
         
         return Promise { fulfill, reject in
-            self.agent!.request(targetURL, method: .get).responseString(completionHandler: { response in
-                switch response.result {
-                    case .success(let json):
-                        fulfill(json)
+            // Make sure it was delayed not request too fast after fetchAuth method
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.seconds(1) , execute: {
+                self.agent!.request(targetURL, method: .get).responseObject(completionHandler: { (response: DataResponse<PerformanceDataResponse>) in
+                    switch response.result {
+                    case .success:
+                        let performanceData = response.result.value!
+                        
+                        fulfill(performanceData)
                     case .failure(let error):
                         reject(error)
-                }
+                    }
+                })
             })
         }
-    }
-    
-    public func fetchTest() {
-        self.agent!.request("https://httpbin.org/ip", method: .get).responseJSON(completionHandler: { response in
-            debugPrint(response)
-        })
     }
     
 }

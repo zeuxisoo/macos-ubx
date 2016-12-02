@@ -2,7 +2,7 @@ import Foundation
 
 extension Service {
     
-    public func randomUserAgent() -> String {
+    func randomUserAgent() -> String {
         let userAgents = [
             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36",
             "Mozilla/5.0 (Macintosh; U; PPC Mac OS X; fr) AppleWebKit/416.12 (KHTML, like Gecko) Safari/412.5",
@@ -16,7 +16,7 @@ extension Service {
         return userAgents[randomIndex]
     }
     
-    public func timestamp() -> Int {
+    func timestamp() -> Int {
         return Int(Date().timeIntervalSince1970)
     }
     
