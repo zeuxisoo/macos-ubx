@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import PromiseKit
 
 class HomeViewController: NSViewController {
     
@@ -39,7 +40,18 @@ class HomeViewController: NSViewController {
     @IBAction func OnClickQueryButton(_ sender: NSButton) {
         NSLog("Hello")
         
-        Service.sharedInstance.fetchTest()
+        Service.sharedInstance.fetchAuth().then { cookie in
+            debugPrint(cookie)
+        }.catch { error in
+            let alert = NSAlert()
+            
+            alert.addButton(withTitle: "OK")
+            alert.messageText = "Oops"
+            alert.informativeText = "Cannot make query the event list\n\(error)"
+            alert.alertStyle = NSAlertStyle.warning
+            
+            alert.runModal()
+        }
     }
     
 }

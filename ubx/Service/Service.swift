@@ -1,5 +1,6 @@
 import Foundation
 import Alamofire
+import PromiseKit
 
 class Service {
     
@@ -24,6 +25,21 @@ class Service {
         self.agent = Alamofire.SessionManager(
             configuration: configuration
         )
+    }
+    
+    public func fetchAuth() -> Promise<String> {
+        return Promise { fulfill, reject in
+            self.agent!.request("http://www.urbtix.hk/", method: .get).responseString(completionHandler: { response in
+                switch response.result {
+                    case .success:
+                        let cookie = response.response?.allHeaderFields["Set-Cookie"] as! String
+                        
+                        fulfill(cookie)
+                    case .failure(let error):
+                        reject(error)
+                }
+            })
+        }
     }
     
     public func fetchTest() {

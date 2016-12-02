@@ -7,4 +7,5 @@ target 'Ubx' do
 
   # Pods for Ubx
   pod 'Alamofire', '~> 4.0'
+  pod 'PromiseKit', '~> 4.0'
 end
