@@ -38,10 +38,12 @@ class HomeViewController: NSViewController {
     
     // Handle interface action
     @IBAction func OnClickQueryButton(_ sender: NSButton) {
-        NSLog("Hello")
+        let auth            = Service.sharedInstance.fetchAuth()
+        let performanceList = Service.sharedInstance.fetchPerformanceList(eventId: 30924, pageNo: 1)
         
-        Service.sharedInstance.fetchAuth().then { cookie in
+        when(fulfilled: auth, performanceList).then { cookie, performances -> Void in
             debugPrint(cookie)
+            debugPrint(performances)
         }.catch { error in
             let alert = NSAlert()
             

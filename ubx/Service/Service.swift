@@ -42,6 +42,22 @@ class Service {
         }
     }
     
+    public func fetchPerformanceList(eventId: Int, pageNo: Int, perPage: Int = 10) -> Promise<String> {
+        let timestamp = self.timestamp()
+        let targetURL = "https://ticket.urbtix.hk/internet/json/event/\(eventId)/performance/\(perPage)/\(pageNo)/perf.json?locale=zh_TW&\(timestamp)"
+        
+        return Promise { fulfill, reject in
+            self.agent!.request(targetURL, method: .get).responseString(completionHandler: { response in
+                switch response.result {
+                    case .success(let json):
+                        fulfill(json)
+                    case .failure(let error):
+                        reject(error)
+                }
+            })
+        }
+    }
+    
     public func fetchTest() {
         self.agent!.request("https://httpbin.org/ip", method: .get).responseJSON(completionHandler: { response in
             debugPrint(response)

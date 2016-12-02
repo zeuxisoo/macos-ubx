@@ -16,4 +16,8 @@ extension Service {
         return userAgents[randomIndex]
     }
     
+    public func timestamp() -> Int {
+        return Int(Date().timeIntervalSince1970)
+    }
+    
 }
