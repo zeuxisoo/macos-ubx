@@ -13,6 +13,8 @@
 		E6643A331DEC39A20050FD3F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6643A321DEC39A20050FD3F /* HomeViewController.swift */; };
 		E6643A351DEC39A20050FD3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6643A341DEC39A20050FD3F /* Assets.xcassets */; };
 		E6643A381DEC39A20050FD3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6643A361DEC39A20050FD3F /* Main.storyboard */; };
+		E6F3A36C1DF163BD0093C934 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3A36B1DF163BD0093C934 /* Service.swift */; };
+		E6F3A36E1DF1659A0093C934 /* Service+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3A36D1DF1659A0093C934 /* Service+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		E6643A371DEC39A20050FD3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6643A391DEC39A20050FD3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6F3A3691DF15E570093C934 /* Ubx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ubx.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6F3A36B1DF163BD0093C934 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		E6F3A36D1DF1659A0093C934 /* Service+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Service+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +83,7 @@
 		E6643A2F1DEC39A20050FD3F /* Ubx */ = {
 			isa = PBXGroup;
 			children = (
-				E6F3A36A1DF15F650093C934 /* Services */,
+				E6F3A36A1DF15F650093C934 /* Service */,
 				E61AA08C1DF008E1009D133A /* Models */,
 				E6643A301DEC39A20050FD3F /* AppDelegate.swift */,
 				E6908E961DEEDA2F00C6CDBA /* Controllers */,
@@ -99,12 +103,14 @@
 			path = ubx/Controllers;
 			sourceTree = SOURCE_ROOT;
 		};
-		E6F3A36A1DF15F650093C934 /* Services */ = {
+		E6F3A36A1DF15F650093C934 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				E6F3A36B1DF163BD0093C934 /* Service.swift */,
+				E6F3A36D1DF1659A0093C934 /* Service+Utils.swift */,
 			);
-			name = Services;
-			path = ubx/Services;
+			name = Service;
+			path = Ubx/Service;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -230,7 +236,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6643A331DEC39A20050FD3F /* HomeViewController.swift in Sources */,
+				E6F3A36C1DF163BD0093C934 /* Service.swift in Sources */,
 				E61AA08E1DF00923009D133A /* Event.swift in Sources */,
+				E6F3A36E1DF1659A0093C934 /* Service+Utils.swift in Sources */,
 				E6643A311DEC39A20050FD3F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

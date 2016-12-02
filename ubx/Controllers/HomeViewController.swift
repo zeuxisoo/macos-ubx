@@ -34,7 +34,14 @@ class HomeViewController: NSViewController {
         didSet {
         }
     }
-
+    
+    // Handle interface action
+    @IBAction func OnClickQueryButton(_ sender: NSButton) {
+        NSLog("Hello")
+        
+        Service.sharedInstance.fetchTest()
+    }
+    
 }
 
 // Control table view
