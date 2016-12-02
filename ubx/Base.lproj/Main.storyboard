@@ -186,7 +186,7 @@
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn width="118" minWidth="40" maxWidth="1000" id="K90-o4-5AE">
+                                                <tableColumn identifier="ConcertName" width="118" minWidth="40" maxWidth="1000" id="K90-o4-5AE">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Name">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -210,9 +210,6 @@
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
-                                                                    <connections>
-                                                                        <binding destination="2ER-Yp-hHe" name="value" keyPath="objectValue.name" id="nvT-u4-f8Z"/>
-                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <constraints>
@@ -226,7 +223,7 @@
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
-                                                <tableColumn width="231" minWidth="40" maxWidth="1000" id="M2A-kE-H74">
+                                                <tableColumn identifier="ConcertDate" width="231" minWidth="40" maxWidth="1000" id="M2A-kE-H74">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Date">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -250,9 +247,6 @@
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
-                                                                    <connections>
-                                                                        <binding destination="e17-f1-dhH" name="value" keyPath="objectValue.date" id="CiX-sp-OyO"/>
-                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <constraints>
@@ -266,7 +260,7 @@
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
-                                                <tableColumn identifier="" width="79" minWidth="10" maxWidth="3.4028234663852886e+38" id="jtf-sd-raO" userLabel="Status">
+                                                <tableColumn identifier="ConcertStatus" width="79" minWidth="10" maxWidth="3.4028234663852886e+38" id="jtf-sd-raO" userLabel="Status">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Status">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -290,9 +284,6 @@
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
-                                                                    <connections>
-                                                                        <binding destination="dpk-g4-1iS" name="value" keyPath="objectValue.status" id="Obu-eW-uHh"/>
-                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <constraints>
@@ -307,9 +298,6 @@
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
-                                            <connections>
-                                                <outlet property="dataSource" destination="XfG-lQ-9wD" id="k3G-l0-3ce"/>
-                                            </connections>
                                         </tableView>
                                     </subviews>
                                 </clipView>

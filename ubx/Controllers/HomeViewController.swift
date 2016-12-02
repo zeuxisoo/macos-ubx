@@ -21,6 +21,9 @@ class HomeViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.eventListTableView.delegate = self
+        self.eventListTableView.dataSource = self
     }
     
     override func viewDidAppear() {
@@ -34,14 +37,36 @@ class HomeViewController: NSViewController {
 
 }
 
+// Control table view
+extension HomeViewController: NSTableViewDelegate {
+    
+    // Handle cell view ui 
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let event    = self.events[row]
+        let cellView = tableView.make(withIdentifier: (tableColumn?.identifier)!, owner: self) as! NSTableCellView
+        
+        if tableColumn?.identifier == "ConcertName" {
+            cellView.textField?.stringValue = event.name
+        }
+        
+        if tableColumn?.identifier == "ConcertDate" {
+            cellView.textField?.stringValue = event.date
+        }
+        
+        if tableColumn?.identifier == "ConcertStatus" {
+            cellView.textField?.stringValue = event.status
+        }
+        
+        return cellView
+    }
+    
+}
+
+// Provide cell data
 extension HomeViewController: NSTableViewDataSource {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         return self.events.count
-    }
-    
-    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-        return self.events[row]
     }
     
 }
