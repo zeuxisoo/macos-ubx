@@ -1,4 +1,5 @@
-platform :osx, '10.10'
+source 'https://github.com/CocoaPods/Specs.git'
+platform :osx, '10.12'
 
 target 'Ubx' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
