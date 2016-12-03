@@ -51,12 +51,17 @@ class HomeViewController: NSViewController {
         }.catch { error in
             let alert = NSAlert()
             
-            alert.addButton(withTitle: "OK")
             alert.messageText = "Oops"
-            alert.informativeText = "Cannot make query the event list\n\(error)"
-            alert.alertStyle = NSAlertStyle.warning
-            
-            alert.runModal()
+            alert.informativeText = "Cannot make query for the event list"
+            alert.addButton(withTitle: "OK")
+            alert.alertStyle = .warning
+            alert.beginSheetModal(for: self.view.window!, completionHandler: { response in
+                if response == NSAlertFirstButtonReturn {
+                    debugPrint("OK was clicked")
+                }else{
+                    debugPrint("OK not clicked")
+                }
+            })
         }
     }
     
