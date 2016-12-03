@@ -13,22 +13,13 @@ class HomeViewController: NSViewController {
     
     @IBOutlet weak var eventListTableView: NSTableView!
     
-    var events = [
-        Event(name: "Test1", date: "Date1", status: "Status1"),
-        Event(name: "Test2", date: "Date2", status: "Status2"),
-        Event(name: "Test3", date: "Date3", status: "Status3"),
-        Event(name: "Test4", date: "Date4", status: "Status4"),
-    ]
+    var events = [Event]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.eventListTableView.delegate = self
         self.eventListTableView.dataSource = self
-    }
-    
-    override func viewDidAppear() {
-        self.eventListTableView.reloadData()
     }
 
     override var representedObject: Any? {
@@ -41,13 +32,27 @@ class HomeViewController: NSViewController {
         let auth            = Service.sharedInstance.fetchAuth()
         let performanceList = Service.sharedInstance.fetchPerformanceList(eventId: 30924, pageNo: 1)
         
-        when(fulfilled: auth, performanceList).then { cookie, performance -> Void in
+        when(fulfilled: auth, performanceList).then { cookie, performanceData -> Void in
             debugPrint(cookie)
-            debugPrint(performance)
+            debugPrint(performanceData)
 
-            debugPrint("performances: \(performance.performances)")
-            debugPrint("performances count: \(performance.performances?.count)")
-            debugPrint("status: \(performance.status?.count)")
+            debugPrint("performances: \(performanceData.performances)")
+            debugPrint("performances count: \(performanceData.performances?.count)")
+            debugPrint("status: \(performanceData.status?.count)")
+            
+            if let performances = performanceData.performances, let status = performanceData.status {
+                for (i, performance) in performances.enumerated() {
+                    self.events.append(
+                        Event(
+                            name  : performance.performanceName!,
+                            date  : Service.sharedInstance.formatDate(timestamp: performance.performanceDateTime!),
+                            status: status[i]
+                        )
+                    )
+                }
+                
+                self.eventListTableView.reloadData()
+            }
         }.catch { error in
             let alert = NSAlert()
             

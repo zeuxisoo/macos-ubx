@@ -15,18 +15,21 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.0.5):
     - PromiseKit/CorePromise
+  - SwiftDate (4.0.8)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireObjectMapper (~> 4.0)
   - PromiseKit (~> 4.0)
+  - SwiftDate (~> 4.0)
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   AlamofireObjectMapper: 842d2eed43a4d0593ff0110d54ac86a170c4519c
   ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
   PromiseKit: 593b5e24ded6cbb1ebc708bc2c3428a8a5632d91
+  SwiftDate: 9aa3259d8850d818bec02802f8f05aa9a8c26fdb
 
-PODFILE CHECKSUM: 255a8ed3623d9a9f062fb2719a79e5bec21b3bb2
+PODFILE CHECKSUM: 6175ce2d83c99e30def030c82ca3095ce811ef6f
 
 COCOAPODS: 1.2.0.beta.1

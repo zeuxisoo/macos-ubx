@@ -11,7 +11,7 @@ class PerformancesResponse: Mappable {
     var bookmarkStatus: Int?
     var performanceCategoryClass: String?
     var transactionMaxQuota: Int?
-    var performanceDateTime: Int64?
+    var performanceDateTime: Double?
     var isPurchasable: Bool?
     var counterSalesStartDate: String?
     var counterSalesEndDate: String?

@@ -9,4 +9,5 @@ target 'Ubx' do
   pod 'Alamofire', '~> 4.0'
   pod 'AlamofireObjectMapper', '~> 4.0'
   pod 'PromiseKit', '~> 4.0'
+  pod 'SwiftDate', '~> 4.0'
 end
