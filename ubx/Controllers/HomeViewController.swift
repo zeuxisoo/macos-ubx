@@ -35,9 +35,11 @@ class HomeViewController: NSViewController {
         
         if eventId.isEmpty {
             self.showAlert(message: "Please enter event id")
+        }else if self.isNumber(eventId) == false {
+            self.showAlert(message: "Invalid format in event id")
         }else{
             let auth            = Service.sharedInstance.fetchAuth()
-            let performanceList = Service.sharedInstance.fetchPerformanceList(eventId: 30924, pageNo: 1)
+            let performanceList = Service.sharedInstance.fetchPerformanceList(eventId: Int(eventId)!, pageNo: 1)
             
             self.disableQueryButton()
             
@@ -83,6 +85,13 @@ class HomeViewController: NSViewController {
     private func resetQueryButton() {
         self.queryButton.title = "Query"
         self.queryButton.isEnabled = true
+    }
+    
+    private func isNumber(_ text: String) -> Bool {
+        let numberCharSet = NSCharacterSet.decimalDigits.inverted
+        
+        // No empty and cannot found number at any position in text
+        return text.isEmpty == false && text.rangeOfCharacter(from: numberCharSet) == nil
     }
     
     private func showAlert(message: String, callback: ((NSModalResponse) -> Void)? = nil) {
