@@ -12,6 +12,7 @@ import PromiseKit
 class HomeViewController: NSViewController {
     
     @IBOutlet weak var eventListTableView: NSTableView!
+    @IBOutlet weak var queryButton: NSButton!
     
     var events = [Event]()
     
@@ -27,19 +28,14 @@ class HomeViewController: NSViewController {
         }
     }
     
-    // Handle interface action
+    // MARK: - Handle interface actions
     @IBAction func OnClickQueryButton(_ sender: NSButton) {
         let auth            = Service.sharedInstance.fetchAuth()
         let performanceList = Service.sharedInstance.fetchPerformanceList(eventId: 30924, pageNo: 1)
         
+        self.disableQueryButton()
+        
         when(fulfilled: auth, performanceList).then { cookie, performanceData -> Void in
-            debugPrint(cookie)
-            debugPrint(performanceData)
-
-            debugPrint("performances: \(performanceData.performances)")
-            debugPrint("performances count: \(performanceData.performances?.count)")
-            debugPrint("status: \(performanceData.status?.count)")
-            
             if let performances = performanceData.performances, let status = performanceData.status {
                 for (i, performance) in performances.enumerated() {
                     self.events.append(
@@ -53,6 +49,8 @@ class HomeViewController: NSViewController {
                 
                 self.eventListTableView.reloadData()
             }
+            
+            self.resetQueryButton()
         }.catch { error in
             let alert = NSAlert()
             
@@ -66,8 +64,21 @@ class HomeViewController: NSViewController {
                 }else{
                     debugPrint("OK not clicked")
                 }
+                
+                self.resetQueryButton()
             })
         }
+    }
+    
+    // MARK: - Share methods for interface or controller
+    private func disableQueryButton() {
+        self.queryButton.title = "Loading"
+        self.queryButton.isEnabled = false
+    }
+    
+    private func resetQueryButton() {
+        self.queryButton.title = "Query"
+        self.queryButton.isEnabled = true
     }
     
 }

@@ -335,6 +335,7 @@
                     </view>
                     <connections>
                         <outlet property="eventListTableView" destination="pXe-Zn-s9R" id="VU7-4b-8AM"/>
+                        <outlet property="queryButton" destination="LZT-38-j0X" id="j6s-DQ-cYQ"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
