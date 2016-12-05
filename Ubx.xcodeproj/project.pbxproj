@@ -13,6 +13,7 @@
 		E6643A331DEC39A20050FD3F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6643A321DEC39A20050FD3F /* HomeViewController.swift */; };
 		E6643A351DEC39A20050FD3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6643A341DEC39A20050FD3F /* Assets.xcassets */; };
 		E6643A381DEC39A20050FD3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6643A361DEC39A20050FD3F /* Main.storyboard */; };
+		E66482A21DF56EFD0050A320 /* MyApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66482A11DF56EFD0050A320 /* MyApplication.swift */; };
 		E664D0251DF1A5E600C6DB7C /* PerformanceDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E664D0241DF1A5E600C6DB7C /* PerformanceDataResponse.swift */; };
 		E664D0281DF1A7AC00C6DB7C /* PerformancesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E664D0271DF1A7AC00C6DB7C /* PerformancesResponse.swift */; };
 		E6F3A36C1DF163BD0093C934 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3A36B1DF163BD0093C934 /* Service.swift */; };
@@ -29,6 +30,7 @@
 		E6643A341DEC39A20050FD3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6643A371DEC39A20050FD3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6643A391DEC39A20050FD3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E66482A11DF56EFD0050A320 /* MyApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyApplication.swift; sourceTree = "<group>"; };
 		E664D0241DF1A5E600C6DB7C /* PerformanceDataResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceDataResponse.swift; sourceTree = "<group>"; };
 		E664D0271DF1A7AC00C6DB7C /* PerformancesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformancesResponse.swift; sourceTree = "<group>"; };
 		E6F3A3691DF15E570093C934 /* Ubx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ubx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,10 +89,10 @@
 		E6643A2F1DEC39A20050FD3F /* Ubx */ = {
 			isa = PBXGroup;
 			children = (
+				E66482A01DF56EA30050A320 /* Bootstrap */,
 				E664D0261DF1A6F700C6DB7C /* Responses */,
 				E6F3A36A1DF15F650093C934 /* Service */,
 				E61AA08C1DF008E1009D133A /* Models */,
-				E6643A301DEC39A20050FD3F /* AppDelegate.swift */,
 				E6908E961DEEDA2F00C6CDBA /* Controllers */,
 				E6643A341DEC39A20050FD3F /* Assets.xcassets */,
 				E6643A361DEC39A20050FD3F /* Main.storyboard */,
@@ -98,6 +100,16 @@
 			);
 			path = Ubx;
 			sourceTree = "<group>";
+		};
+		E66482A01DF56EA30050A320 /* Bootstrap */ = {
+			isa = PBXGroup;
+			children = (
+				E6643A301DEC39A20050FD3F /* AppDelegate.swift */,
+				E66482A11DF56EFD0050A320 /* MyApplication.swift */,
+			);
+			name = Bootstrap;
+			path = Ubx/Bootstrap;
+			sourceTree = SOURCE_ROOT;
 		};
 		E664D0261DF1A6F700C6DB7C /* Responses */ = {
 			isa = PBXGroup;
@@ -250,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E66482A21DF56EFD0050A320 /* MyApplication.swift in Sources */,
 				E6643A331DEC39A20050FD3F /* HomeViewController.swift in Sources */,
 				E6F3A36C1DF163BD0093C934 /* Service.swift in Sources */,
 				E61AA08E1DF00923009D133A /* Event.swift in Sources */,
