@@ -13,6 +13,7 @@ class HomeViewController: NSViewController {
     
     @IBOutlet weak var eventListTableView: NSTableView!
     @IBOutlet weak var queryButton: NSButton!
+    @IBOutlet weak var eventIdTextField: NSTextField!
     
     var events = [Event]()
     
@@ -30,43 +31,46 @@ class HomeViewController: NSViewController {
     
     // MARK: - Handle interface actions
     @IBAction func OnClickQueryButton(_ sender: NSButton) {
-        let auth            = Service.sharedInstance.fetchAuth()
-        let performanceList = Service.sharedInstance.fetchPerformanceList(eventId: 30924, pageNo: 1)
+        let eventId = self.eventIdTextField.stringValue
         
-        self.disableQueryButton()
-        
-        when(fulfilled: auth, performanceList).then { cookie, performanceData -> Void in
-            if let performances = performanceData.performances, let status = performanceData.status {
-                for (i, performance) in performances.enumerated() {
-                    self.events.append(
-                        Event(
-                            name  : performance.performanceName!,
-                            date  : Service.sharedInstance.formatDate(timestamp: performance.performanceDateTime!),
-                            status: status[i]
+        if eventId.isEmpty {
+            self.showAlert(message: "Please enter event id")
+        }else{
+            let auth            = Service.sharedInstance.fetchAuth()
+            let performanceList = Service.sharedInstance.fetchPerformanceList(eventId: 30924, pageNo: 1)
+            
+            self.disableQueryButton()
+            
+            when(fulfilled: auth, performanceList).then { cookie, performanceData -> Void in
+                if let performances = performanceData.performances, let status = performanceData.status {
+                    for (i, performance) in performances.enumerated() {
+                        self.events.append(
+                            Event(
+                                name  : performance.performanceName!,
+                                date  : Service.sharedInstance.formatDate(timestamp: performance.performanceDateTime!),
+                                status: status[i]
+                            )
                         )
-                    )
-                }
-                
-                self.eventListTableView.reloadData()
-            }
-            
-            self.resetQueryButton()
-        }.catch { error in
-            let alert = NSAlert()
-            
-            alert.messageText = "Oops"
-            alert.informativeText = "Cannot make query for the event list"
-            alert.addButton(withTitle: "OK")
-            alert.alertStyle = .warning
-            alert.beginSheetModal(for: self.view.window!, completionHandler: { response in
-                if response == NSAlertFirstButtonReturn {
-                    debugPrint("OK was clicked")
-                }else{
-                    debugPrint("OK not clicked")
+                    }
+                    
+                    self.eventListTableView.reloadData()
                 }
                 
                 self.resetQueryButton()
-            })
+            }.catch { error in
+                self.showAlert(
+                    message: "Cannot make query for the event list",
+                    callback: { response in
+                        if response == NSAlertFirstButtonReturn {
+                            debugPrint("OK was clicked")
+                        }else{
+                            debugPrint("OK not clicked")
+                        }
+                        
+                        self.resetQueryButton()
+                    }
+                )
+            }
         }
     }
     
@@ -81,6 +85,16 @@ class HomeViewController: NSViewController {
         self.queryButton.isEnabled = true
     }
     
+    private func showAlert(message: String, callback: ((NSModalResponse) -> Void)? = nil) {
+        let alert = NSAlert()
+        
+        alert.messageText = "Oops"
+        alert.informativeText = message
+        alert.addButton(withTitle: "OK")
+        alert.alertStyle = .warning
+        alert.beginSheetModal(for: self.view.window!, completionHandler: callback)
+    }
+
 }
 
 // Control table view

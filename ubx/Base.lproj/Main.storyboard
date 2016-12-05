@@ -334,6 +334,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="eventIdTextField" destination="d6O-vN-tOx" id="8Ei-do-WnV"/>
                         <outlet property="eventListTableView" destination="pXe-Zn-s9R" id="VU7-4b-8AM"/>
                         <outlet property="queryButton" destination="LZT-38-j0X" id="j6s-DQ-cYQ"/>
                     </connections>
