@@ -182,6 +182,9 @@
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dss-wV-SHr" userLabel="Timer Second Text Field">
                                 <rect key="frame" x="407" y="288" width="55" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="dHP-rR-jbZ"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="3" drawsBackground="YES" id="F7N-9X-IQL" userLabel="Second">
                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="XQi-ES-hzC"/>
                                     <font key="font" metaFont="system"/>
@@ -195,6 +198,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="OnClickMonitButton:" target="XfG-lQ-9wD" id="41P-MM-LPi"/>
+                                </connections>
                             </button>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeD-Rb-5Gz">
                                 <rect key="frame" x="20" y="16" width="540" height="264"/>
@@ -380,7 +386,9 @@
                     <connections>
                         <outlet property="eventIdTextField" destination="d6O-vN-tOx" id="8Ei-do-WnV"/>
                         <outlet property="eventListTableView" destination="pXe-Zn-s9R" id="VU7-4b-8AM"/>
+                        <outlet property="monitButton" destination="uIt-AD-WKF" id="GJR-Y9-Iu4"/>
                         <outlet property="queryButton" destination="LZT-38-j0X" id="j6s-DQ-cYQ"/>
+                        <outlet property="timerSecondTextField" destination="dss-wV-SHr" id="fIO-9c-BIS"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
