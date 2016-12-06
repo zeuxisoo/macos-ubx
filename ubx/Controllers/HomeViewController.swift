@@ -47,7 +47,7 @@ class HomeViewController: NSViewController {
                 beforeQueryAction: {
                     self.disableQueryButton()
                 },
-                afterEventListTableViewReloaded: {
+                afterEventListTableViewReloaded: { _ in
                     self.resetQueryButton()
                 },
                 failure: { _ in
@@ -87,8 +87,17 @@ class HomeViewController: NSViewController {
                                 beforeQueryAction: {
                                     debugPrint("Timer triggered")
                                 },
-                                afterEventListTableViewReloaded: {
-                                    debugPrint("- table view reloaded")
+                                afterEventListTableViewReloaded: { events in
+                                    // Show notification when events status contain AVAILABLE
+                                    if events.count > 0 {
+                                        let availableEvents = events.map({ event in
+                                            return event.status.uppercased() == "AVAILABLE"
+                                        })
+                                        
+                                        if availableEvents.count > 0 {
+                                            self.makeNotification(title: "Wow", message: "\(events.first!.name) is available")
+                                        }
+                                    }
                                 },
                                 failure: { error in
                                     debugPrint("- error: \(error)")
@@ -156,7 +165,7 @@ class HomeViewController: NSViewController {
         alert.beginSheetModal(for: self.view.window!, completionHandler: callback)
     }
     
-    private func queryEvents(eventId: String, beforeQueryAction: () -> Void, afterEventListTableViewReloaded: @escaping () -> Void, failure: @escaping (Error) -> Void) {
+    private func queryEvents(eventId: String, beforeQueryAction: () -> Void, afterEventListTableViewReloaded: @escaping ([Event]) -> Void, failure: @escaping (Error) -> Void) {
         let auth            = Service.sharedInstance.fetchAuth()
         let performanceList = Service.sharedInstance.fetchPerformanceList(eventId: Int(eventId)!, pageNo: 1)
         
@@ -182,10 +191,23 @@ class HomeViewController: NSViewController {
                 self.eventListTableView.reloadData()
             }
             
-            afterEventListTableViewReloaded()
+            afterEventListTableViewReloaded(self.events)
         }.catch { error in
             failure(error)
         }
+    }
+    
+    private func makeNotification(title: String, message: String) {
+        let userNotification = NSUserNotification()
+        
+        userNotification.title = title
+        userNotification.informativeText = message
+        userNotification.soundName = NSUserNotificationDefaultSoundName
+        
+        userNotification.hasActionButton = true
+        userNotification.actionButtonTitle = "View"
+        
+        NSUserNotificationCenter.default.deliver(userNotification)
     }
 
 }
