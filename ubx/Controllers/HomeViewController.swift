@@ -45,6 +45,10 @@ class HomeViewController: NSViewController {
             
             when(fulfilled: auth, performanceList).then { cookie, performanceData -> Void in
                 if let performances = performanceData.performances, let status = performanceData.status {
+                    // Clear all events data first
+                    self.events.removeAll()
+                    
+                    // Add each event into events data
                     for (i, performance) in performances.enumerated() {
                         self.events.append(
                             Event(
@@ -55,6 +59,7 @@ class HomeViewController: NSViewController {
                         )
                     }
                     
+                    // Reload all data in event list table view
                     self.eventListTableView.reloadData()
                 }
                 
