@@ -11,6 +11,15 @@ import Cocoa
 
 class MainWindowController: NSWindowController {
     
+    override func windowDidLoad() {
+        super.windowDidLoad()
+        
+        if let thisWindow = self.window {
+            thisWindow.titlebarAppearsTransparent = true
+            thisWindow.titleVisibility = .hidden
+        }
+    }
+    
     override func windowTitle(forDocumentDisplayName displayName: String) -> String {
         return self.window!.title
     }

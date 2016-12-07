@@ -208,7 +208,7 @@
         <scene sceneID="7BR-dH-39T">
             <objects>
                 <windowController storyboardIdentifier="Document Window Controller" id="3LG-E4-wCj" customClass="MainWindowController" customModule="Ubx" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Ubx" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="rGz-uO-KZT">
+                    <window key="window" title="Ubx" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="rGz-uO-KZT" customClass="MyWindow" customModule="Ubx" customModuleProvider="target">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="580" height="320"/>
