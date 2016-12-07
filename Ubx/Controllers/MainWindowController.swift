@@ -15,8 +15,8 @@ class MainWindowController: NSWindowController {
         super.windowDidLoad()
         
         if let thisWindow = self.window {
-            thisWindow.titlebarAppearsTransparent = true
-            thisWindow.titleVisibility = .hidden
+            thisWindow.titlebarAppearsTransparent = false
+            thisWindow.titleVisibility = .visible
         }
     }
     
