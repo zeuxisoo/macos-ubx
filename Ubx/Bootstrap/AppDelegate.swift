@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  ubx
+//  Ubx
 //
-//  Created by Zeuxis on 28/11/2016.
+//  Created by Zeuxis on 7/12/2016.
 //  Copyright © 2016 Zeuxis. All rights reserved.
 //
 
