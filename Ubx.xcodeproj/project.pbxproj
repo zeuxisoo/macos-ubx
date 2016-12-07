@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D7874586B2D2C43E875F088C /* Pods_Ubx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6CD0BFAF452D7AB460F1A5 /* Pods_Ubx.framework */; };
-		E648D1E41DF7CBFB00E0801B /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = E648D1E31DF7CBFB00E0801B /* Document.swift */; };
 		E648D1E61DF7CBFB00E0801B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E648D1E51DF7CBFB00E0801B /* Assets.xcassets */; };
 		E648D1E91DF7CBFB00E0801B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E648D1E71DF7CBFB00E0801B /* Main.storyboard */; };
 		E64BA8CE1DF7D00C0066E5EB /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64BA8CC1DF7D00C0066E5EB /* Service.swift */; };
@@ -19,6 +18,8 @@
 		E64BA8D81DF7D0740066E5EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64BA8D61DF7D0740066E5EB /* AppDelegate.swift */; };
 		E64BA8D91DF7D0740066E5EB /* MyApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64BA8D71DF7D0740066E5EB /* MyApplication.swift */; };
 		E64BA8DB1DF7D0810066E5EB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64BA8DA1DF7D0810066E5EB /* HomeViewController.swift */; };
+		E64BA8DD1DF7DEA30066E5EB /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64BA8DC1DF7DEA30066E5EB /* MainWindowController.swift */; };
+		E64BA8DF1DF7E0400066E5EB /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64BA8DE1DF7E0400066E5EB /* Document.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +27,6 @@
 		4D0318AD1C3E28AAD3AC3ABC /* Pods-Ubx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ubx.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ubx/Pods-Ubx.release.xcconfig"; sourceTree = "<group>"; };
 		BE83B1344FFFF3F371594541 /* Pods-Ubx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ubx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ubx/Pods-Ubx.debug.xcconfig"; sourceTree = "<group>"; };
 		E648D1DC1DF7CBFB00E0801B /* Ubx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ubx.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E648D1E31DF7CBFB00E0801B /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		E648D1E51DF7CBFB00E0801B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E648D1E81DF7CBFB00E0801B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E648D1EA1DF7CBFB00E0801B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,6 +38,8 @@
 		E64BA8D61DF7D0740066E5EB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E64BA8D71DF7D0740066E5EB /* MyApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyApplication.swift; sourceTree = "<group>"; };
 		E64BA8DA1DF7D0810066E5EB /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E64BA8DC1DF7DEA30066E5EB /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		E64BA8DE1DF7E0400066E5EB /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +88,6 @@
 				E64BA8C91DF7CFCD0066E5EB /* Models */,
 				E64BA8C81DF7CFC10066E5EB /* Bootstrap */,
 				E64BA8C71DF7CFA10066E5EB /* Controllers */,
-				E648D1E31DF7CBFB00E0801B /* Document.swift */,
 				E648D1E51DF7CBFB00E0801B /* Assets.xcassets */,
 				E648D1E71DF7CBFB00E0801B /* Main.storyboard */,
 				E648D1EA1DF7CBFB00E0801B /* Info.plist */,
@@ -98,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				E64BA8DA1DF7D0810066E5EB /* HomeViewController.swift */,
+				E64BA8DC1DF7DEA30066E5EB /* MainWindowController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -107,6 +109,7 @@
 			children = (
 				E64BA8D61DF7D0740066E5EB /* AppDelegate.swift */,
 				E64BA8D71DF7D0740066E5EB /* MyApplication.swift */,
+				E64BA8DE1DF7E0400066E5EB /* Document.swift */,
 			);
 			path = Bootstrap;
 			sourceTree = "<group>";
@@ -269,9 +272,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E64BA8D91DF7D0740066E5EB /* MyApplication.swift in Sources */,
-				E648D1E41DF7CBFB00E0801B /* Document.swift in Sources */,
 				E64BA8D31DF7D0260066E5EB /* PerformancesResponse.swift in Sources */,
 				E64BA8CE1DF7D00C0066E5EB /* Service.swift in Sources */,
+				E64BA8DD1DF7DEA30066E5EB /* MainWindowController.swift in Sources */,
+				E64BA8DF1DF7E0400066E5EB /* Document.swift in Sources */,
 				E64BA8CF1DF7D00C0066E5EB /* Service+Utils.swift in Sources */,
 				E64BA8DB1DF7D0810066E5EB /* HomeViewController.swift in Sources */,
 				E64BA8D81DF7D0740066E5EB /* AppDelegate.swift in Sources */,
