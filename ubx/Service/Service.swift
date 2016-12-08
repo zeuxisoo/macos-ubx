@@ -33,9 +33,11 @@ class Service {
             self.agent!.request("http://www.urbtix.hk/", method: .get).responseString(completionHandler: { response in
                 switch response.result {
                     case .success:
-                        let cookie = response.response?.allHeaderFields["Set-Cookie"] as! String
-                        
-                        fulfill(cookie)
+                        if let cookie = response.response?.allHeaderFields["Set-Cookie"] {
+                            fulfill(cookie as! String)
+                        }else{
+                            reject("Cannot got auth cookie" as! Error)
+                        }
                     case .failure(let error):
                         reject(error)
                 }
