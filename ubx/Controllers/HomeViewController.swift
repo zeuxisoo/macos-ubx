@@ -52,6 +52,7 @@ class HomeViewController: NSViewController {
                 },
                 failure: { _ in
                     self.showAlert(message: "Cannot make query for the event list")
+                    self.resetQueryButton()
                 }
             )
         }
