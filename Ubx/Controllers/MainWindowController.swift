@@ -15,6 +15,11 @@ class MainWindowController: NSWindowController {
         super.windowDidLoad()
         
         if let thisWindow = self.window {
+            // Dark mode
+            thisWindow.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
+            thisWindow.invalidateShadow()
+            
+            // Set title bar style
             thisWindow.titlebarAppearsTransparent = false
             thisWindow.titleVisibility = .visible
         }
