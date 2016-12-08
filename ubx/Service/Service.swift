@@ -21,6 +21,14 @@ class Service {
             "Connection"     : "keep-alive",
             "User-Agent"     : self.randomUserAgent()
         ]
+    
+        // TODO: - Implement new function for user custom proxy
+        //Proxy
+        //configuration.connectionProxyDictionary = [
+        //    kCFNetworkProxiesHTTPEnable as AnyHashable: true,
+        //    kCFNetworkProxiesHTTPProxy as AnyHashable: "12.33.254.195",
+        //    kCFNetworkProxiesHTTPPort as AnyHashable: 3128,
+        //]
         
         // Init web agnet
         self.agent = Alamofire.SessionManager(
@@ -63,6 +71,12 @@ class Service {
                     }
                 })
             })
+        }
+    }
+    
+    func fetchTest() {
+        self.agent!.request("http://httpbin.org/ip", method: .get).responseJSON { response in
+            debugPrint(response)
         }
     }
     
