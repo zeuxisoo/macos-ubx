@@ -7,3 +7,6 @@
 
 /Scripts/appicon.icns
 /Scripts/appicon.iconset
+/Scripts/node_modules
+/Scripts/Ubx.app
+/Scripts/Ubx.dmg
