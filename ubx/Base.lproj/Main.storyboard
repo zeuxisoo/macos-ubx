@@ -252,6 +252,9 @@
                             </textField>
                             <button horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="s1e-xL-Pao">
                                 <rect key="frame" x="149" y="282" width="77" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="eJI-cY-xud"/>
+                                </constraints>
                                 <buttonCell key="cell" type="push" title="Query" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="evf-8Z-bbu" customClass="MyButtonCell" customModule="Ubx" customModuleProvider="target">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -269,7 +272,10 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cUd-Cy-AL3" userLabel="Monit Button">
-                                <rect key="frame" x="149" y="250" width="75" height="32"/>
+                                <rect key="frame" x="149" y="250" width="77" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="tHT-Cx-fa5"/>
+                                </constraints>
                                 <buttonCell key="cell" type="push" title="Monit" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5VS-Rj-XXS" customClass="MyButtonCell" customModule="Ubx" customModuleProvider="target">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -295,55 +301,54 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WtN-HE-DVC" userLabel="HTTP Proxy Host Text Field">
-                                <rect key="frame" x="342" y="289" width="101" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="127.0.0.1" drawsBackground="YES" id="xpC-c8-thn">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WtN-HE-DVC" userLabel="HTTP Proxy Host Text Field" customClass="MyTextField" customModule="Ubx" customModuleProvider="target">
+                                <rect key="frame" x="342" y="289" width="92" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="127.0.0.1" drawsBackground="YES" usesSingleLineMode="YES" id="xpC-c8-thn">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g6K-qC-rNC">
-                                <rect key="frame" x="443" y="292" width="8" height="17"/>
+                                <rect key="frame" x="434" y="292" width="8" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title=":" id="aep-zM-gHI">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t4B-I9-bGt" userLabel="HTTP Proxy Port Text Field">
-                                <rect key="frame" x="451" y="290" width="40" height="22"/>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t4B-I9-bGt" userLabel="HTTP Proxy Port Text Field" customClass="MyTextField" customModule="Ubx" customModuleProvider="target">
+                                <rect key="frame" x="442" y="290" width="40" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="kez-FK-Oq3"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="3218" drawsBackground="YES" id="yZu-kS-3hp">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="3218" drawsBackground="YES" usesSingleLineMode="YES" id="yZu-kS-3hp">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mnk-kR-72I" userLabel="Test Button">
-                                <rect key="frame" x="493" y="283" width="66" height="32"/>
-                                <buttonCell key="cell" type="push" title="Test" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ePE-db-H5h">
+                                <rect key="frame" x="484" y="283" width="77" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="e7e-ga-MUz"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Test" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ePE-db-H5h" customClass="MyButtonCell" customModule="Ubx" customModuleProvider="target">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                            </button>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="iHw-LI-lDw" userLabel="Enable Checkbox">
-                                <rect key="frame" x="340" y="259" width="63" height="18"/>
-                                <buttonCell key="cell" type="check" title="Enable" bezelStyle="regularSquare" imagePosition="left" inset="2" id="wwl-5y-KhU">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
+                                <connections>
+                                    <action selector="OnClickTestButton:" target="pmD-DK-knZ" id="l3a-aN-RBe"/>
+                                </connections>
                             </button>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="42" horizontalPageScroll="10" verticalLineScroll="42" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWo-IQ-yCK">
-                                <rect key="frame" x="20" y="16" width="540" height="222"/>
+                                <rect key="frame" x="20" y="16" width="542" height="222"/>
                                 <clipView key="contentView" id="qSI-89-9s4">
-                                    <rect key="frame" x="1" y="0.0" width="538" height="221"/>
+                                    <rect key="frame" x="1" y="0.0" width="540" height="221"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="40" rowSizeStyle="automatic" headerView="APL-GM-g9F" viewBased="YES" id="jbk-Vu-2EX">
-                                            <rect key="frame" x="0.0" y="0.0" width="538" height="198"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="198"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -473,14 +478,24 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <tableHeaderView key="headerView" id="APL-GM-g9F">
-                                    <rect key="frame" x="0.0" y="0.0" width="538" height="23"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="540" height="23"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="iHw-LI-lDw" userLabel="Enable Checkbox">
+                                <rect key="frame" x="340" y="259" width="63" height="18"/>
+                                <buttonCell key="cell" type="check" title="Enable" bezelStyle="regularSquare" imagePosition="left" inset="2" id="wwl-5y-KhU">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="OnClickEnableCheckbox:" target="pmD-DK-knZ" id="n3C-52-yo0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Dzj-vT-tZr" firstAttribute="top" secondItem="FbG-Cf-dIf" secondAttribute="bottom" constant="17" id="1Zz-kw-TA2"/>
-                            <constraint firstAttribute="trailing" secondItem="mnk-kR-72I" secondAttribute="trailing" constant="27" id="4eC-DE-djO"/>
+                            <constraint firstAttribute="trailing" secondItem="mnk-kR-72I" secondAttribute="trailing" constant="25" id="4eC-DE-djO"/>
                             <constraint firstItem="zfg-8x-F49" firstAttribute="top" secondItem="gsz-eB-g1R" secondAttribute="top" constant="11" id="4nR-78-m9N"/>
                             <constraint firstItem="C9B-7H-zNv" firstAttribute="leading" secondItem="Dzj-vT-tZr" secondAttribute="trailing" constant="8" id="6rb-Xj-cgu"/>
                             <constraint firstItem="FbG-Cf-dIf" firstAttribute="leading" secondItem="gsz-eB-g1R" secondAttribute="leading" constant="26" id="7ll-44-xlI"/>
@@ -494,7 +509,7 @@
                             <constraint firstItem="tGH-Up-fUe" firstAttribute="top" secondItem="gsz-eB-g1R" secondAttribute="top" constant="10" id="Rx2-Dq-nhX"/>
                             <constraint firstItem="t4B-I9-bGt" firstAttribute="top" secondItem="gsz-eB-g1R" secondAttribute="top" constant="8" id="STa-eM-hs5"/>
                             <constraint firstItem="mnk-kR-72I" firstAttribute="top" secondItem="gsz-eB-g1R" secondAttribute="top" constant="9" id="UJh-2I-Gic"/>
-                            <constraint firstAttribute="trailing" secondItem="FWo-IQ-yCK" secondAttribute="trailing" constant="20" id="YUQ-83-RPt"/>
+                            <constraint firstAttribute="trailing" secondItem="FWo-IQ-yCK" secondAttribute="trailing" constant="18" id="YUQ-83-RPt"/>
                             <constraint firstAttribute="trailing" secondItem="iHw-LI-lDw" secondAttribute="trailing" constant="179" id="ZVO-XW-exI"/>
                             <constraint firstItem="FWo-IQ-yCK" firstAttribute="top" secondItem="iHw-LI-lDw" secondAttribute="bottom" constant="23" id="aYY-R0-IUE"/>
                             <constraint firstItem="cUd-Cy-AL3" firstAttribute="top" secondItem="s1e-xL-Pao" secondAttribute="bottom" constant="11" id="abf-YP-iiM"/>
@@ -506,7 +521,7 @@
                             <constraint firstItem="cUd-Cy-AL3" firstAttribute="leading" secondItem="C9B-7H-zNv" secondAttribute="trailing" constant="8" id="hev-g1-LQv"/>
                             <constraint firstItem="t4B-I9-bGt" firstAttribute="leading" secondItem="g6K-qC-rNC" secondAttribute="trailing" constant="2" id="joA-iG-exM"/>
                             <constraint firstItem="FbG-Cf-dIf" firstAttribute="top" secondItem="gsz-eB-g1R" secondAttribute="top" constant="11" id="msj-yx-g26"/>
-                            <constraint firstItem="iHw-LI-lDw" firstAttribute="leading" secondItem="cUd-Cy-AL3" secondAttribute="trailing" constant="124" id="pc4-uA-LDI"/>
+                            <constraint firstItem="iHw-LI-lDw" firstAttribute="leading" secondItem="cUd-Cy-AL3" secondAttribute="trailing" constant="122" id="pc4-uA-LDI"/>
                             <constraint firstItem="C9B-7H-zNv" firstAttribute="top" secondItem="tGH-Up-fUe" secondAttribute="bottom" constant="10" symbolic="YES" id="u5G-nA-fHI"/>
                             <constraint firstItem="Dzj-vT-tZr" firstAttribute="leading" secondItem="gsz-eB-g1R" secondAttribute="leading" constant="20" id="xuS-P5-0J5"/>
                             <constraint firstItem="WtN-HE-DVC" firstAttribute="leading" secondItem="zfg-8x-F49" secondAttribute="trailing" constant="2" id="ygp-1I-bGW"/>
@@ -516,7 +531,11 @@
                         <outlet property="eventIdTextField" destination="tGH-Up-fUe" id="uwA-cM-cWc"/>
                         <outlet property="eventListTableView" destination="jbk-Vu-2EX" id="q0n-Lk-Fs7"/>
                         <outlet property="monitButton" destination="cUd-Cy-AL3" id="KVS-He-ebQ"/>
+                        <outlet property="proxyEnableCheckbox" destination="iHw-LI-lDw" id="ujE-CY-eWb"/>
+                        <outlet property="proxyHostTextField" destination="WtN-HE-DVC" id="C2h-VU-ezL"/>
+                        <outlet property="proxyPortTextField" destination="t4B-I9-bGt" id="wGS-2y-iwv"/>
                         <outlet property="queryButton" destination="s1e-xL-Pao" id="TAX-zu-819"/>
+                        <outlet property="testButton" destination="mnk-kR-72I" id="C8N-20-Ch9"/>
                         <outlet property="timerSecondTextField" destination="C9B-7H-zNv" id="naq-JR-UBp"/>
                     </connections>
                 </viewController>
