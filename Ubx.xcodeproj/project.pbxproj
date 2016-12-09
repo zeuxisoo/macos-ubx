@@ -201,6 +201,7 @@
 				TargetAttributes = {
 					E648D1DB1DF7CBFB00E0801B = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = URP5CZHCUP;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -413,7 +414,9 @@
 			baseConfigurationReference = BE83B1344FFFF3F371594541 /* Pods-Ubx.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = URP5CZHCUP;
 				INFOPLIST_FILE = Ubx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = im.ggd.ubx;
@@ -427,7 +430,9 @@
 			baseConfigurationReference = 4D0318AD1C3E28AAD3AC3ABC /* Pods-Ubx.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = URP5CZHCUP;
 				INFOPLIST_FILE = Ubx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = im.ggd.ubx;
