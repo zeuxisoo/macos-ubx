@@ -12,12 +12,21 @@ import PromiseKit
 class HomeViewController: NSViewController {
     
     @IBOutlet weak var eventListTableView: NSTableView!
-    @IBOutlet weak var queryButton: NSButton!
+    
     @IBOutlet weak var eventIdTextField: NSTextField!
+    @IBOutlet weak var queryButton: NSButton!
+    
     @IBOutlet weak var timerSecondTextField: NSTextField!
     @IBOutlet weak var monitButton: NSButton!
     
+    @IBOutlet weak var proxyHostTextField: NSTextField!
+    @IBOutlet weak var proxyPortTextField: NSTextField!
+    @IBOutlet weak var proxyEnableCheckbox: NSButton!
+    @IBOutlet weak var testButton: NSButton!
+    
     var repeatTimer: Timer?
+    
+    var serviceAgent = Service.sharedInstance
     
     var events = [Event]()
     
@@ -122,6 +131,74 @@ class HomeViewController: NSViewController {
         }
     }
     
+    @IBAction func OnClickTestButton(_ sender: Any) {
+        let host = self.proxyHostTextField.stringValue
+        let port = self.proxyPortTextField.stringValue
+        
+        if host.isEmpty {
+            self.showAlert(message: "Please enter proxy host")
+        }else if port.isEmpty {
+            self.showAlert(message: "Please enter proxy port")
+        }else if self.isNumber(port) == false {
+            self.showAlert(message: "Invalid format for proxy port")
+        }else{
+            self.disableTestButton()
+            
+            self.serviceAgent
+                .withProxy(host: host, port: Int(port)!)
+                .fetchProxyTest(
+                    success: { isConnected in
+                        let message = isConnected ? "Proxy is connected" : "Proxy is not connected"
+                        
+                        self.showAlert(message: message)
+                        self.resetTestButton()
+                    },
+                    failure: { error in
+                        self.showAlert(message: error.localizedDescription)
+                        self.resetTestButton()
+                    }
+                )
+        }
+    }
+    
+    @IBAction func OnClickEnableCheckbox(_ sender: Any) {
+        let host = self.proxyHostTextField.stringValue
+        let port = self.proxyPortTextField.stringValue
+        
+        let showAlertAndPreventChecked: (String) -> Void = { message in
+            self.showAlert(message: message, callback: { _ in
+                self.proxyEnableCheckbox.state = NSOffState
+            })
+        }
+        
+        if host.isEmpty {
+            showAlertAndPreventChecked("Please enter proxy host")
+        }else if port.isEmpty {
+            showAlertAndPreventChecked("Please enter proxy port")
+        }else if self.isNumber(port) == false {
+            showAlertAndPreventChecked("Invalid format for proxy port")
+        }else{
+            if self.proxyEnableCheckbox.state == NSOnState {
+                self.proxyHostTextField.isEditable = false
+                self.proxyPortTextField.isEditable = false
+                
+                self.proxyEnableCheckbox.title = "Enabled"
+                
+                self.serviceAgent = self.serviceAgent.withProxy(
+                    host: host,
+                    port: Int(port)!
+                )
+            }else{
+                self.proxyHostTextField.isEditable = true
+                self.proxyPortTextField.isEditable = true
+                
+                self.proxyEnableCheckbox.title = "Enable"
+                
+                self.serviceAgent = Service.sharedInstance
+            }
+        }
+    }
+    
     // MARK: - Share methods for interface or controller
     private func disableQueryButton() {
         self.queryButton.title = "Loading"
@@ -149,6 +226,22 @@ class HomeViewController: NSViewController {
         self.monitButton.title = "Monit"
     }
     
+    private func disableTestButton() {
+        self.proxyHostTextField.isEnabled = false
+        self.proxyPortTextField.isEnabled = false
+        
+        self.testButton.isEnabled = false
+        self.testButton.title = "...."
+    }
+    
+    private func resetTestButton() {
+        self.proxyHostTextField.isEnabled = true
+        self.proxyPortTextField.isEnabled = true
+        
+        self.testButton.isEnabled = true
+        self.testButton.title = "Test"
+    }
+    
     private func isNumber(_ text: String) -> Bool {
         let numberCharSet = NSCharacterSet.decimalDigits.inverted
         
@@ -167,8 +260,8 @@ class HomeViewController: NSViewController {
     }
     
     private func queryEvents(eventId: String, beforeQueryAction: () -> Void, afterEventListTableViewReloaded: @escaping ([Event]) -> Void, failure: @escaping (Error) -> Void) {
-        let auth            = Service.sharedInstance.fetchAuth()
-        let performanceList = Service.sharedInstance.fetchPerformanceList(eventId: Int(eventId)!, pageNo: 1)
+        let auth            = self.serviceAgent.fetchAuth()
+        let performanceList = self.serviceAgent.fetchPerformanceList(eventId: Int(eventId)!, pageNo: 1)
         
         beforeQueryAction()
         
@@ -182,7 +275,7 @@ class HomeViewController: NSViewController {
                     self.events.append(
                         Event(
                             name  : performance.performanceName!,
-                            date  : Service.sharedInstance.formatDate(timestamp: performance.performanceDateTime!),
+                            date  : self.serviceAgent.formatDate(timestamp: performance.performanceDateTime!),
                             status: status[i]
                         )
                     )

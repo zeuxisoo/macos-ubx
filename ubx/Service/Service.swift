@@ -2,6 +2,7 @@ import Foundation
 import Alamofire
 import PromiseKit
 import AlamofireObjectMapper
+import SwiftyJSON
 
 class Service {
     
@@ -10,6 +11,13 @@ class Service {
     private var agent: Alamofire.SessionManager?
     
     private init() {
+        // Init web agnet
+        self.agent = Alamofire.SessionManager(
+            configuration: self.makeConfiguration()
+        )
+    }
+    
+    func makeConfiguration() -> URLSessionConfiguration {
         // Header and connection configuration
         let configuration = URLSessionConfiguration.default
         
@@ -21,19 +29,26 @@ class Service {
             "Connection"     : "keep-alive",
             "User-Agent"     : self.randomUserAgent()
         ]
+
+        return configuration
+    }
     
-        // TODO: - Implement new function for user custom proxy
-        //Proxy
-        //configuration.connectionProxyDictionary = [
-        //    kCFNetworkProxiesHTTPEnable as AnyHashable: true,
-        //    kCFNetworkProxiesHTTPProxy as AnyHashable: "12.33.254.195",
-        //    kCFNetworkProxiesHTTPPort as AnyHashable: 3128,
-        //]
+    func withProxy(host: String, port: Int) -> Service {
+        debugPrint("Proxying")
         
-        // Init web agnet
+        let configuration = self.makeConfiguration()
+        
+        configuration.connectionProxyDictionary = [
+            kCFNetworkProxiesHTTPEnable as AnyHashable: true,
+            kCFNetworkProxiesHTTPProxy as AnyHashable: host,
+            kCFNetworkProxiesHTTPPort as AnyHashable: port,
+        ]
+        
         self.agent = Alamofire.SessionManager(
             configuration: configuration
         )
+        
+        return self
     }
     
     func fetchAuth() -> Promise<String> {
@@ -74,9 +89,19 @@ class Service {
         }
     }
     
-    func fetchTest() {
+    func fetchProxyTest(success: @escaping (Bool) -> Void, failure: @escaping (Error) -> Void) {
         self.agent!.request("http://httpbin.org/ip", method: .get).responseJSON { response in
-            debugPrint(response)
+            switch response.result {
+                case .success(let data):
+                    let json = JSON(data)
+                    let origin = json["origin"].stringValue
+                    
+                    success(origin.isEmpty == false)
+                    break
+                case .failure(let error):
+                    failure(error)
+                    break
+            }
         }
     }
     
