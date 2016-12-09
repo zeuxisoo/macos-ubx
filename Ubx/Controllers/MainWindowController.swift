@@ -22,6 +22,8 @@ class MainWindowController: NSWindowController {
             // Set title bar style
             thisWindow.titlebarAppearsTransparent = false
             thisWindow.titleVisibility = .visible
+            
+            thisWindow.isMovableByWindowBackground = true
         }
     }
     
