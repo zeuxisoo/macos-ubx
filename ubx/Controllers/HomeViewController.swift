@@ -265,6 +265,10 @@ class HomeViewController: NSViewController {
         let auth            = self.serviceAgent.fetchAuth()
         let performanceList = self.serviceAgent.fetchPerformanceList(eventId: Int(eventId)!, pageNo: 1)
         
+        // Set window title to eventId
+        self.view.window?.title = eventId
+        
+        // Callback the beforeQueryAction hook
         beforeQueryAction()
         
         when(fulfilled: auth, performanceList).then { cookie, performanceData -> Void in
