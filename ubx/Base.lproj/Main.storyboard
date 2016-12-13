@@ -539,6 +539,7 @@
                         <outlet property="eventIdTextField" destination="tGH-Up-fUe" id="uwA-cM-cWc"/>
                         <outlet property="eventListTableView" destination="jbk-Vu-2EX" id="q0n-Lk-Fs7"/>
                         <outlet property="monitButton" destination="cUd-Cy-AL3" id="KVS-He-ebQ"/>
+                        <outlet property="notificationCheckbox" destination="fYP-uh-KlD" id="MFn-Pc-UvK"/>
                         <outlet property="proxyEnableCheckbox" destination="iHw-LI-lDw" id="ujE-CY-eWb"/>
                         <outlet property="proxyHostTextField" destination="WtN-HE-DVC" id="C2h-VU-ezL"/>
                         <outlet property="proxyPortTextField" destination="t4B-I9-bGt" id="wGS-2y-iwv"/>

@@ -24,6 +24,8 @@ class HomeViewController: NSViewController {
     @IBOutlet weak var proxyEnableCheckbox: NSButton!
     @IBOutlet weak var testButton: NSButton!
     
+    @IBOutlet weak var notificationCheckbox: NSButton!
+    
     var repeatTimer: Timer?
     
     var serviceAgent = Service.sharedInstance
@@ -104,7 +106,7 @@ class HomeViewController: NSViewController {
                                             return event.status.uppercased() == "AVAILABLE"
                                         })
                                         
-                                        if availableEvents.count > 0 {
+                                        if availableEvents.count > 0 && self.notificationCheckbox.state == NSOnState {
                                             self.makeNotification(title: "Wow", message: "\(events.first!.name) is available")
                                         }
                                     }
