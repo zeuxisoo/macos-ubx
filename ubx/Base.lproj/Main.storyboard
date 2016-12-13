@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -294,7 +294,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zfg-8x-F49">
-                                <rect key="frame" x="259" y="292" width="83" height="17"/>
+                                <rect key="frame" x="263" y="292" width="83" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="HTTP Proxy :" id="5JK-eb-DzG">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -302,7 +302,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WtN-HE-DVC" userLabel="HTTP Proxy Host Text Field" customClass="MyTextField" customModule="Ubx" customModuleProvider="target">
-                                <rect key="frame" x="342" y="289" width="92" height="22"/>
+                                <rect key="frame" x="348" y="289" width="92" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="127.0.0.1" drawsBackground="YES" usesSingleLineMode="YES" id="xpC-c8-thn">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -310,7 +310,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g6K-qC-rNC">
-                                <rect key="frame" x="434" y="292" width="8" height="17"/>
+                                <rect key="frame" x="440" y="292" width="8" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title=":" id="aep-zM-gHI">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -318,7 +318,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t4B-I9-bGt" userLabel="HTTP Proxy Port Text Field" customClass="MyTextField" customModule="Ubx" customModuleProvider="target">
-                                <rect key="frame" x="442" y="290" width="40" height="22"/>
+                                <rect key="frame" x="449" y="290" width="40" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="kez-FK-Oq3"/>
                                 </constraints>
@@ -329,7 +329,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mnk-kR-72I" userLabel="Test Button">
-                                <rect key="frame" x="484" y="283" width="77" height="32"/>
+                                <rect key="frame" x="491" y="283" width="77" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="e7e-ga-MUz"/>
                                 </constraints>
@@ -483,8 +483,8 @@
                                 </tableHeaderView>
                             </scrollView>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="iHw-LI-lDw" userLabel="Enable Checkbox">
-                                <rect key="frame" x="340" y="259" width="63" height="18"/>
-                                <buttonCell key="cell" type="check" title="Enable" bezelStyle="regularSquare" imagePosition="left" inset="2" id="wwl-5y-KhU">
+                                <rect key="frame" x="463" y="257" width="101" height="18"/>
+                                <buttonCell key="cell" type="check" title="Enable Proxy" bezelStyle="regularSquare" imagePosition="left" inset="2" id="wwl-5y-KhU">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -492,39 +492,47 @@
                                     <action selector="OnClickEnableCheckbox:" target="pmD-DK-knZ" id="n3C-52-yo0"/>
                                 </connections>
                             </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="fYP-uh-KlD">
+                                <rect key="frame" x="356" y="257" width="92" height="18"/>
+                                <buttonCell key="cell" type="check" title="Notification" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="j0e-cK-6cJ">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Dzj-vT-tZr" firstAttribute="top" secondItem="FbG-Cf-dIf" secondAttribute="bottom" constant="17" id="1Zz-kw-TA2"/>
-                            <constraint firstAttribute="trailing" secondItem="mnk-kR-72I" secondAttribute="trailing" constant="25" id="4eC-DE-djO"/>
+                            <constraint firstAttribute="trailing" secondItem="mnk-kR-72I" secondAttribute="trailing" constant="18" id="4eC-DE-djO"/>
                             <constraint firstItem="zfg-8x-F49" firstAttribute="top" secondItem="gsz-eB-g1R" secondAttribute="top" constant="11" id="4nR-78-m9N"/>
                             <constraint firstItem="C9B-7H-zNv" firstAttribute="leading" secondItem="Dzj-vT-tZr" secondAttribute="trailing" constant="8" id="6rb-Xj-cgu"/>
                             <constraint firstItem="FbG-Cf-dIf" firstAttribute="leading" secondItem="gsz-eB-g1R" secondAttribute="leading" constant="26" id="7ll-44-xlI"/>
                             <constraint firstItem="g6K-qC-rNC" firstAttribute="leading" secondItem="WtN-HE-DVC" secondAttribute="trailing" constant="2" id="Ahh-FO-qsx"/>
                             <constraint firstItem="FWo-IQ-yCK" firstAttribute="leading" secondItem="gsz-eB-g1R" secondAttribute="leading" constant="20" id="C8D-Sm-l0a"/>
                             <constraint firstItem="s1e-xL-Pao" firstAttribute="leading" secondItem="tGH-Up-fUe" secondAttribute="trailing" constant="8" id="EHK-p7-YIy"/>
-                            <constraint firstItem="zfg-8x-F49" firstAttribute="leading" secondItem="s1e-xL-Pao" secondAttribute="trailing" constant="41" id="GBK-K2-HZE"/>
+                            <constraint firstItem="zfg-8x-F49" firstAttribute="leading" secondItem="s1e-xL-Pao" secondAttribute="trailing" constant="45" id="GBK-K2-HZE"/>
+                            <constraint firstItem="iHw-LI-lDw" firstAttribute="top" secondItem="mnk-kR-72I" secondAttribute="bottom" constant="17" id="HlD-Y0-Vzp"/>
                             <constraint firstItem="g6K-qC-rNC" firstAttribute="top" secondItem="gsz-eB-g1R" secondAttribute="top" constant="11" id="Jpp-zP-nsa"/>
                             <constraint firstItem="mnk-kR-72I" firstAttribute="leading" secondItem="t4B-I9-bGt" secondAttribute="trailing" constant="8" id="MIJ-70-Kza"/>
                             <constraint firstItem="FWo-IQ-yCK" firstAttribute="top" secondItem="C9B-7H-zNv" secondAttribute="bottom" constant="18" id="MNi-QW-k47"/>
+                            <constraint firstAttribute="trailing" secondItem="iHw-LI-lDw" secondAttribute="trailing" constant="18" id="N5a-ad-zBb"/>
                             <constraint firstItem="tGH-Up-fUe" firstAttribute="top" secondItem="gsz-eB-g1R" secondAttribute="top" constant="10" id="Rx2-Dq-nhX"/>
                             <constraint firstItem="t4B-I9-bGt" firstAttribute="top" secondItem="gsz-eB-g1R" secondAttribute="top" constant="8" id="STa-eM-hs5"/>
                             <constraint firstItem="mnk-kR-72I" firstAttribute="top" secondItem="gsz-eB-g1R" secondAttribute="top" constant="9" id="UJh-2I-Gic"/>
+                            <constraint firstItem="WtN-HE-DVC" firstAttribute="top" secondItem="gsz-eB-g1R" secondAttribute="top" constant="9" id="XeF-gQ-doy"/>
                             <constraint firstAttribute="trailing" secondItem="FWo-IQ-yCK" secondAttribute="trailing" constant="18" id="YUQ-83-RPt"/>
-                            <constraint firstAttribute="trailing" secondItem="iHw-LI-lDw" secondAttribute="trailing" constant="179" id="ZVO-XW-exI"/>
-                            <constraint firstItem="FWo-IQ-yCK" firstAttribute="top" secondItem="iHw-LI-lDw" secondAttribute="bottom" constant="23" id="aYY-R0-IUE"/>
                             <constraint firstItem="cUd-Cy-AL3" firstAttribute="top" secondItem="s1e-xL-Pao" secondAttribute="bottom" constant="11" id="abf-YP-iiM"/>
                             <constraint firstItem="cUd-Cy-AL3" firstAttribute="leading" secondItem="s1e-xL-Pao" secondAttribute="leading" id="d3c-fS-qlF"/>
                             <constraint firstAttribute="bottom" secondItem="FWo-IQ-yCK" secondAttribute="bottom" constant="16" id="d4g-gd-mlC"/>
                             <constraint firstItem="s1e-xL-Pao" firstAttribute="top" secondItem="gsz-eB-g1R" secondAttribute="top" constant="10" id="dUD-m1-TPD"/>
                             <constraint firstItem="tGH-Up-fUe" firstAttribute="leading" secondItem="FbG-Cf-dIf" secondAttribute="trailing" constant="8" id="ddc-4D-LZC"/>
-                            <constraint firstItem="iHw-LI-lDw" firstAttribute="top" secondItem="WtN-HE-DVC" secondAttribute="bottom" constant="14" id="eia-Dv-n6A"/>
                             <constraint firstItem="cUd-Cy-AL3" firstAttribute="leading" secondItem="C9B-7H-zNv" secondAttribute="trailing" constant="8" id="hev-g1-LQv"/>
-                            <constraint firstItem="t4B-I9-bGt" firstAttribute="leading" secondItem="g6K-qC-rNC" secondAttribute="trailing" constant="2" id="joA-iG-exM"/>
+                            <constraint firstItem="t4B-I9-bGt" firstAttribute="leading" secondItem="g6K-qC-rNC" secondAttribute="trailing" constant="3" id="joA-iG-exM"/>
                             <constraint firstItem="FbG-Cf-dIf" firstAttribute="top" secondItem="gsz-eB-g1R" secondAttribute="top" constant="11" id="msj-yx-g26"/>
-                            <constraint firstItem="iHw-LI-lDw" firstAttribute="leading" secondItem="cUd-Cy-AL3" secondAttribute="trailing" constant="122" id="pc4-uA-LDI"/>
+                            <constraint firstItem="fYP-uh-KlD" firstAttribute="top" secondItem="WtN-HE-DVC" secondAttribute="bottom" constant="16" id="tMY-d2-i2e"/>
                             <constraint firstItem="C9B-7H-zNv" firstAttribute="top" secondItem="tGH-Up-fUe" secondAttribute="bottom" constant="10" symbolic="YES" id="u5G-nA-fHI"/>
+                            <constraint firstItem="iHw-LI-lDw" firstAttribute="leading" secondItem="fYP-uh-KlD" secondAttribute="trailing" constant="19" id="uEg-74-Zzw"/>
                             <constraint firstItem="Dzj-vT-tZr" firstAttribute="leading" secondItem="gsz-eB-g1R" secondAttribute="leading" constant="20" id="xuS-P5-0J5"/>
-                            <constraint firstItem="WtN-HE-DVC" firstAttribute="leading" secondItem="zfg-8x-F49" secondAttribute="trailing" constant="2" id="ygp-1I-bGW"/>
+                            <constraint firstItem="WtN-HE-DVC" firstAttribute="leading" secondItem="zfg-8x-F49" secondAttribute="trailing" constant="4" id="ygp-1I-bGW"/>
                         </constraints>
                     </view>
                     <connections>
