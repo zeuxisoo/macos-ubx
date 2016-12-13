@@ -310,7 +310,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g6K-qC-rNC">
-                                <rect key="frame" x="440" y="292" width="8" height="17"/>
+                                <rect key="frame" x="441" y="292" width="8" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title=":" id="aep-zM-gHI">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -489,7 +489,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="OnClickEnableCheckbox:" target="pmD-DK-knZ" id="n3C-52-yo0"/>
+                                    <action selector="OnClickProxyEnableCheckbox:" target="pmD-DK-knZ" id="n3C-52-yo0"/>
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="fYP-uh-KlD">
@@ -506,7 +506,7 @@
                             <constraint firstItem="zfg-8x-F49" firstAttribute="top" secondItem="gsz-eB-g1R" secondAttribute="top" constant="11" id="4nR-78-m9N"/>
                             <constraint firstItem="C9B-7H-zNv" firstAttribute="leading" secondItem="Dzj-vT-tZr" secondAttribute="trailing" constant="8" id="6rb-Xj-cgu"/>
                             <constraint firstItem="FbG-Cf-dIf" firstAttribute="leading" secondItem="gsz-eB-g1R" secondAttribute="leading" constant="26" id="7ll-44-xlI"/>
-                            <constraint firstItem="g6K-qC-rNC" firstAttribute="leading" secondItem="WtN-HE-DVC" secondAttribute="trailing" constant="2" id="Ahh-FO-qsx"/>
+                            <constraint firstItem="g6K-qC-rNC" firstAttribute="leading" secondItem="WtN-HE-DVC" secondAttribute="trailing" constant="3" id="Ahh-FO-qsx"/>
                             <constraint firstItem="FWo-IQ-yCK" firstAttribute="leading" secondItem="gsz-eB-g1R" secondAttribute="leading" constant="20" id="C8D-Sm-l0a"/>
                             <constraint firstItem="s1e-xL-Pao" firstAttribute="leading" secondItem="tGH-Up-fUe" secondAttribute="trailing" constant="8" id="EHK-p7-YIy"/>
                             <constraint firstItem="zfg-8x-F49" firstAttribute="leading" secondItem="s1e-xL-Pao" secondAttribute="trailing" constant="45" id="GBK-K2-HZE"/>
@@ -526,7 +526,7 @@
                             <constraint firstItem="s1e-xL-Pao" firstAttribute="top" secondItem="gsz-eB-g1R" secondAttribute="top" constant="10" id="dUD-m1-TPD"/>
                             <constraint firstItem="tGH-Up-fUe" firstAttribute="leading" secondItem="FbG-Cf-dIf" secondAttribute="trailing" constant="8" id="ddc-4D-LZC"/>
                             <constraint firstItem="cUd-Cy-AL3" firstAttribute="leading" secondItem="C9B-7H-zNv" secondAttribute="trailing" constant="8" id="hev-g1-LQv"/>
-                            <constraint firstItem="t4B-I9-bGt" firstAttribute="leading" secondItem="g6K-qC-rNC" secondAttribute="trailing" constant="3" id="joA-iG-exM"/>
+                            <constraint firstItem="t4B-I9-bGt" firstAttribute="leading" secondItem="g6K-qC-rNC" secondAttribute="trailing" constant="2" id="joA-iG-exM"/>
                             <constraint firstItem="FbG-Cf-dIf" firstAttribute="top" secondItem="gsz-eB-g1R" secondAttribute="top" constant="11" id="msj-yx-g26"/>
                             <constraint firstItem="fYP-uh-KlD" firstAttribute="top" secondItem="WtN-HE-DVC" secondAttribute="bottom" constant="16" id="tMY-d2-i2e"/>
                             <constraint firstItem="C9B-7H-zNv" firstAttribute="top" secondItem="tGH-Up-fUe" secondAttribute="bottom" constant="10" symbolic="YES" id="u5G-nA-fHI"/>

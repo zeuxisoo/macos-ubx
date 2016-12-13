@@ -163,7 +163,7 @@ class HomeViewController: NSViewController {
         }
     }
     
-    @IBAction func OnClickEnableCheckbox(_ sender: Any) {
+    @IBAction func OnClickProxyEnableCheckbox(_ sender: Any) {
         let host = self.proxyHostTextField.stringValue
         let port = self.proxyPortTextField.stringValue
         
@@ -184,7 +184,7 @@ class HomeViewController: NSViewController {
                 self.proxyHostTextField.isEditable = false
                 self.proxyPortTextField.isEditable = false
                 
-                self.proxyEnableCheckbox.title = "Enabled"
+                self.proxyEnableCheckbox.title = "Enabled Proxy"
                 
                 self.serviceAgent = self.serviceAgent.withProxy(
                     host: host,
@@ -194,7 +194,7 @@ class HomeViewController: NSViewController {
                 self.proxyHostTextField.isEditable = true
                 self.proxyPortTextField.isEditable = true
                 
-                self.proxyEnableCheckbox.title = "Enable"
+                self.proxyEnableCheckbox.title = "Enable Proxy"
                 
                 self.serviceAgent = Service.sharedInstance
             }
