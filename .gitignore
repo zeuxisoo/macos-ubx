@@ -10,3 +10,5 @@
 /Scripts/node_modules
 /Scripts/Ubx.app
 /Scripts/Ubx.dmg
+/Scripts/Ubx-*.7z
+/Scripts/Ubx-*.dmg
