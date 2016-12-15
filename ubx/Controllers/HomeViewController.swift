@@ -45,7 +45,7 @@ class HomeViewController: NSViewController {
     }
     
     // MARK: - Handle interface actions
-    @IBAction func OnClickQueryButton(_ sender: NSButton) {
+    @IBAction func onClickQueryButton(_ sender: NSButton) {
         let eventId = self.eventIdTextField.stringValue
         
         if eventId.isEmpty {
@@ -69,7 +69,7 @@ class HomeViewController: NSViewController {
         }
     }
     
-    @IBAction func OnClickMonitButton(_ sender: Any) {
+    @IBAction func onClickMonitButton(_ sender: Any) {
         let monitButtonTitle = self.monitButton.title
         
         switch monitButtonTitle.lowercased() {
@@ -133,7 +133,7 @@ class HomeViewController: NSViewController {
         }
     }
     
-    @IBAction func OnClickTestButton(_ sender: Any) {
+    @IBAction func onClickTestButton(_ sender: Any) {
         let host = self.proxyHostTextField.stringValue
         let port = self.proxyPortTextField.stringValue
         
@@ -163,7 +163,7 @@ class HomeViewController: NSViewController {
         }
     }
     
-    @IBAction func OnClickProxyEnableCheckbox(_ sender: Any) {
+    @IBAction func onClickProxyEnableCheckbox(_ sender: Any) {
         let host = self.proxyHostTextField.stringValue
         let port = self.proxyPortTextField.stringValue
         
