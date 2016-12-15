@@ -3,6 +3,7 @@ PODS:
   - AlamofireObjectMapper (4.0.1):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 2.0)
+  - MASPreferences (1.1.4)
   - ObjectMapper (2.2.1)
   - PromiseKit (4.0.5):
     - PromiseKit/Foundation (= 4.0.5)
@@ -21,6 +22,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireObjectMapper (~> 4.0)
+  - MASPreferences (~> 1.0)
   - PromiseKit (~> 4.0)
   - SwiftDate (~> 4.0)
   - SwiftyJSON (~> 3.1)
@@ -28,11 +30,12 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   AlamofireObjectMapper: 842d2eed43a4d0593ff0110d54ac86a170c4519c
+  MASPreferences: 7bdcfe891d7840453cf48f95fa866c3e152ace7a
   ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
   PromiseKit: 593b5e24ded6cbb1ebc708bc2c3428a8a5632d91
   SwiftDate: 9aa3259d8850d818bec02802f8f05aa9a8c26fdb
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: 6ea05adc9b9472590975e4553a3be671559e1097
+PODFILE CHECKSUM: 3e3213f60b0ee1217ab3e38152fb02d823660a41
 
 COCOAPODS: 1.2.0.beta.1

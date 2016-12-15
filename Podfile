@@ -11,4 +11,5 @@ target 'Ubx' do
   pod 'PromiseKit', '~> 4.0'
   pod 'SwiftDate', '~> 4.0'
   pod 'SwiftyJSON', '~> 3.1'
+  pod 'MASPreferences', '~> 1.0'
 end
