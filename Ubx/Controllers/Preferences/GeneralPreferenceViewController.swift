@@ -9,8 +9,47 @@
 import Cocoa
 import MASPreferences
 
-class GeneralPreferenceViewController: NSViewController, MASPreferencesViewController {
+class GeneralPreferenceViewController: NSViewController {
+    
+    @IBOutlet weak var fetchPageNoComboBox: NSComboBox!
+    @IBOutlet weak var fetchEachPageRecordComboBox: NSComboBox!
+    
+    let settings = Settings.sharedInstance
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.fetchPageNoComboBox.selectItem(withObjectValue: self.settings.fetchPageNo)
+        self.fetchEachPageRecordComboBox.selectItem(withObjectValue: self.settings.fetchEachPageRecord)
+        
+        self.fetchPageNoComboBox.delegate = self
+        self.fetchEachPageRecordComboBox.delegate = self
+    }
 
+}
+
+// MARK: - Implement  NSComboBox delegate methods
+extension GeneralPreferenceViewController: NSComboBoxDelegate {
+    
+    func comboBoxSelectionDidChange(_ notification: Notification) {
+        if let combox = notification.object as? NSComboBox {
+            let currentItem = (combox.objectValueOfSelectedItem as! NSString).integerValue
+            
+            if combox.identifier == "FetchPageNo" {
+                self.settings.fetchPageNo = currentItem
+            }
+            
+            if combox.identifier == "FetchEachPageRecord" {
+                self.settings.fetchEachPageRecord = currentItem
+            }
+        }
+    }
+    
+}
+
+// MARK: - Implement MASPreferencesViewController protocol methods
+extension GeneralPreferenceViewController: MASPreferencesViewController {
+    
     override var identifier: String? {
         get {
             return "GeneralPreferences"
@@ -26,11 +65,6 @@ class GeneralPreferenceViewController: NSViewController, MASPreferencesViewContr
     
     var toolbarItemLabel: String! {
         return NSLocalizedString("General", comment: "General preference pane")
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
     }
     
 }

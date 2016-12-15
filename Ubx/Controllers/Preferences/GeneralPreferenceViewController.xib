@@ -8,6 +8,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="GeneralPreferenceViewController" customModule="Ubx" customModuleProvider="target">
             <connections>
+                <outlet property="fetchEachPageRecordComboBox" destination="LG7-Bf-Scs" id="fO8-BR-mie"/>
+                <outlet property="fetchPageNoComboBox" destination="yjB-bf-vh3" id="gN6-u6-odh"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -35,15 +37,26 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vai-Hl-Bsm">
-                    <rect key="frame" x="139" y="205" width="32" height="22"/>
+                <comboBox identifier="FetchPageNo" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yjB-bf-vh3">
+                    <rect key="frame" x="139" y="202" width="55" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="1" placeholderString="1" drawsBackground="YES" id="Pr0-Zd-pTL">
+                    <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" title="5" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="Wm3-uB-tTs">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="ZjU-CQ-QGc">
+                            <real key="minimum" value="1"/>
+                            <real key="maximum" value="100"/>
+                        </numberFormatter>
                         <font key="font" metaFont="system"/>
-                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
+                        <objectValues>
+                            <string>1</string>
+                            <string>2</string>
+                            <string>3</string>
+                            <string>4</string>
+                            <string>5</string>
+                        </objectValues>
+                    </comboBoxCell>
+                </comboBox>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S9G-w1-VlQ">
                     <rect key="frame" x="18" y="177" width="115" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -53,17 +66,28 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9U7-FA-BlV">
-                    <rect key="frame" x="139" y="175" width="32" height="22"/>
+                <comboBox identifier="FetchEachPageRecord" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LG7-Bf-Scs">
+                    <rect key="frame" x="139" y="172" width="55" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="10" placeholderString="10" drawsBackground="YES" id="G4N-KA-NPg">
+                    <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" title="10" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="kwh-s7-BBe">
+                        <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="PcK-tw-r5M">
+                            <real key="minimum" value="5"/>
+                            <real key="maximum" value="100"/>
+                        </numberFormatter>
                         <font key="font" metaFont="system"/>
-                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
+                        <objectValues>
+                            <string>5</string>
+                            <string>10</string>
+                            <string>15</string>
+                            <string>20</string>
+                        </objectValues>
+                    </comboBoxCell>
+                </comboBox>
             </subviews>
-            <point key="canvasLocation" x="-533" y="131"/>
+            <point key="canvasLocation" x="-1403" y="47"/>
         </customView>
+        <userDefaultsController representsSharedInstance="YES" id="UHg-df-ZCR"/>
     </objects>
 </document>
