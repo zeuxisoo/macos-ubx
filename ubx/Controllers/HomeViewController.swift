@@ -262,8 +262,13 @@ class HomeViewController: NSViewController {
     }
     
     private func queryEvents(eventId: String, beforeQueryAction: () -> Void, afterEventListTableViewReloaded: @escaping ([Event]) -> Void, failure: @escaping (Error) -> Void) {
+        let settings        = Settings.sharedInstance
         let auth            = self.serviceAgent.fetchAuth()
-        let performanceList = self.serviceAgent.fetchPerformanceList(eventId: Int(eventId)!, pageNo: 1)
+        let performanceList = self.serviceAgent.fetchPerformanceList(
+            eventId: Int(eventId)!,
+            pageNo: settings.fetchPageNo,
+            perPage: settings.fetchEachPageRecord
+        )
         
         // Set window title to eventId
         self.view.window?.title = eventId
