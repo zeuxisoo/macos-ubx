@@ -147,7 +147,7 @@
                         </subviews>
                     </clipView>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="bbm-2h-PFh">
-                        <rect key="frame" x="1" y="111" width="438" height="16"/>
+                        <rect key="frame" x="1" y="-15" width="0.0" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="tjW-tl-bII">
@@ -178,7 +178,7 @@
                     </connections>
                 </button>
             </subviews>
-            <point key="canvasLocation" x="-2369" y="115"/>
+            <point key="canvasLocation" x="-3153" y="43"/>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="UHg-df-ZCR"/>
     </objects>

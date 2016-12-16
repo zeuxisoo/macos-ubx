@@ -14,10 +14,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     lazy var preferencesWindowController: MASPreferencesWindowController = {
         let generalPreferenceViewController = GeneralPreferenceViewController()
+        let mailgunPreferenceViewController = MailgunPreferenceViewController()
         
         return MASPreferencesWindowController(
             viewControllers: [
-                generalPreferenceViewController
+                generalPreferenceViewController,
+                mailgunPreferenceViewController
             ],
             title: NSLocalizedString("Preferences", comment: "Ubx Preferences")
         )

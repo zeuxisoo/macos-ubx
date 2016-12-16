@@ -26,6 +26,8 @@
 		E6937BAE1E02ADD9001323D7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6937BAD1E02ADD9001323D7 /* Settings.swift */; };
 		E6EEB5F41E027C3F000D24AF /* GeneralPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EEB5F21E027C3F000D24AF /* GeneralPreferenceViewController.swift */; };
 		E6EEB5F51E027C3F000D24AF /* GeneralPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6EEB5F31E027C3F000D24AF /* GeneralPreferenceViewController.xib */; };
+		E6F34CF31E03ECAF00DE1CE0 /* MailgunPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F34CF11E03ECAF00DE1CE0 /* MailgunPreferenceViewController.swift */; };
+		E6F34CF41E03ECAF00DE1CE0 /* MailgunPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F34CF21E03ECAF00DE1CE0 /* MailgunPreferenceViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		E6937BAD1E02ADD9001323D7 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E6EEB5F21E027C3F000D24AF /* GeneralPreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPreferenceViewController.swift; sourceTree = "<group>"; };
 		E6EEB5F31E027C3F000D24AF /* GeneralPreferenceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralPreferenceViewController.xib; sourceTree = "<group>"; };
+		E6F34CF11E03ECAF00DE1CE0 /* MailgunPreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailgunPreferenceViewController.swift; sourceTree = "<group>"; };
+		E6F34CF21E03ECAF00DE1CE0 /* MailgunPreferenceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MailgunPreferenceViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 			children = (
 				E6EEB5F21E027C3F000D24AF /* GeneralPreferenceViewController.swift */,
 				E6EEB5F31E027C3F000D24AF /* GeneralPreferenceViewController.xib */,
+				E6F34CF11E03ECAF00DE1CE0 /* MailgunPreferenceViewController.swift */,
+				E6F34CF21E03ECAF00DE1CE0 /* MailgunPreferenceViewController.xib */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 				E648D1E61DF7CBFB00E0801B /* Assets.xcassets in Resources */,
 				E648D1E91DF7CBFB00E0801B /* Main.storyboard in Resources */,
 				E6EEB5F51E027C3F000D24AF /* GeneralPreferenceViewController.xib in Resources */,
+				E6F34CF41E03ECAF00DE1CE0 /* MailgunPreferenceViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +325,7 @@
 				E64BA8DB1DF7D0810066E5EB /* HomeViewController.swift in Sources */,
 				E6937BAE1E02ADD9001323D7 /* Settings.swift in Sources */,
 				E64BA8D81DF7D0740066E5EB /* AppDelegate.swift in Sources */,
+				E6F34CF31E03ECAF00DE1CE0 /* MailgunPreferenceViewController.swift in Sources */,
 				E64BA8D51DF7D0590066E5EB /* Event.swift in Sources */,
 				E64BA8D21DF7D0260066E5EB /* PerformanceDataResponse.swift in Sources */,
 				E621BA831DF919C500870C91 /* MyTextField.swift in Sources */,
