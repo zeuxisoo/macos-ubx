@@ -19,13 +19,55 @@ class GeneralPreferenceViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Set the default value to 2 fetch combo boxes
+        self.fetchPageNoComboBox.cell?.title = String(self.settings.fetchPageNo)
+        self.fetchEachPageRecordComboBox.cell?.title = String(self.settings.fetchEachPageRecord)
         
-        self.fetchPageNoComboBox.selectItem(withObjectValue: self.settings.fetchPageNo)
-        self.fetchEachPageRecordComboBox.selectItem(withObjectValue: self.settings.fetchEachPageRecord)
-        
+        // Delegate 2 fetch combo boxes
         self.fetchPageNoComboBox.delegate = self
         self.fetchEachPageRecordComboBox.delegate = self
+        
+        // Delegate user agents table view and data source
         self.userAgentsTableView.delegate = self
+        self.userAgentsTableView.dataSource = self
+    }
+    
+    // MARK: - Control interface action
+    @IBAction func onClickUserAgentsAddButton(_ sender: Any) {
+        // Create input text field
+        let input = NSTextField(frame: NSRect(x: 0, y: 0, width: 300, height: 24))
+        
+        input.stringValue = ""
+        input.placeholderString = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36"
+        input.translatesAutoresizingMaskIntoConstraints = true
+        input.lineBreakMode = .byClipping
+        input.cell?.isScrollable = true
+        
+        // Create alert dialog to ask user agent string
+        let alert = NSAlert()
+        
+        alert.messageText = "Add user agent"
+        alert.informativeText = "Please enter here:"
+        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: "Cancel")
+        alert.accessoryView = input
+        
+        alert.beginSheetModal(for: self.view.window!) { modalResponse in
+            if modalResponse == NSAlertFirstButtonReturn {
+                var userAgents = self.settings.userAgents
+                let userAgent  = input.stringValue
+                
+                if userAgent.isEmpty == false {
+                    userAgents.append(userAgent)
+                    
+                    self.settings.userAgents = userAgents
+                    
+                    self.userAgentsTableView.reloadData()
+                    self.userAgentsTableView.scrollRowToVisible(userAgents.count - 1)
+                }
+            }
+        }
     }
     
 }

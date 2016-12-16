@@ -41,7 +41,7 @@
                 <comboBox identifier="FetchPageNo" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yjB-bf-vh3">
                     <rect key="frame" x="246" y="225" width="55" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" title="5" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="Wm3-uB-tTs">
+                    <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" placeholderString="1" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="Wm3-uB-tTs">
                         <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="ZjU-CQ-QGc">
                             <real key="minimum" value="1"/>
                             <real key="maximum" value="100"/>
@@ -70,7 +70,7 @@
                 <comboBox identifier="FetchEachPageRecord" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LG7-Bf-Scs">
                     <rect key="frame" x="246" y="195" width="55" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" title="10" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="kwh-s7-BBe">
+                    <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" placeholderString="5" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="kwh-s7-BBe">
                         <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="PcK-tw-r5M">
                             <real key="minimum" value="5"/>
                             <real key="maximum" value="100"/>
@@ -109,8 +109,8 @@
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn identifier="UserAgent" width="435" minWidth="40" maxWidth="1000" id="GA6-Vd-zNg">
-                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="user-agent">
+                                    <tableColumn identifier="UserAgent" width="427" minWidth="40" maxWidth="1000" id="GA6-Vd-zNg">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="agent">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -123,11 +123,11 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView id="5xR-Np-PQY">
-                                                <rect key="frame" x="1" y="1" width="435" height="17"/>
+                                                <rect key="frame" x="1" y="1" width="427" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZR6-hF-bKT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="435" height="17"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="427" height="17"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="HZ0-4a-WHm">
                                                             <font key="font" metaFont="system"/>
@@ -170,6 +170,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="onClickUserAgentsAddButton:" target="-2" id="dsY-8Q-rmG"/>
+                    </connections>
                 </button>
             </subviews>
             <point key="canvasLocation" x="-1403" y="55.5"/>
