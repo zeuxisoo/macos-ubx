@@ -70,6 +70,19 @@ class GeneralPreferenceViewController: NSViewController {
         }
     }
     
+    @IBAction func onClickUserAgentsRemoveButton(_ sender: Any) {
+        var newUserAgents = [String]()
+        
+        for (index, agent) in self.settings.userAgents.enumerated() {
+            if self.userAgentsTableView.isRowSelected(index) == false {
+                newUserAgents.append(agent)
+            }
+        }
+
+        self.settings.userAgents = newUserAgents
+        self.userAgentsTableView.reloadData()
+    }
+    
 }
 
 // MARK: - Implement  NSComboBox delegate methods
