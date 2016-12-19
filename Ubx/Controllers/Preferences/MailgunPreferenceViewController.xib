@@ -8,6 +8,11 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MailgunPreferenceViewController" customModule="Ubx" customModuleProvider="target">
             <connections>
+                <outlet property="mailboxFromTextField" destination="9sc-ie-TtU" id="kZV-vu-RiM"/>
+                <outlet property="mailboxSubjectTextField" destination="rVL-La-Yj6" id="6gL-iA-47D"/>
+                <outlet property="mailboxToTextField" destination="WUw-t2-YB0" id="4PM-zY-GNm"/>
+                <outlet property="mailgunApiKeyTextField" destination="DBA-ZP-lqT" id="PXf-bJ-1Hc"/>
+                <outlet property="mailgunDomainTextField" destination="2sN-2i-QeK" id="3Dn-gS-lMI"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -54,7 +59,7 @@
                     </textFieldCell>
                 </textField>
                 <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBA-ZP-lqT">
-                    <rect key="frame" x="78" y="175" width="382" height="22"/>
+                    <rect key="frame" x="78" y="174" width="382" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" drawsBackground="YES" id="42d-qF-pun">
                         <font key="font" metaFont="system"/>
@@ -117,7 +122,7 @@
                     </textFieldCell>
                 </textField>
                 <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVL-La-Yj6">
-                    <rect key="frame" x="78" y="49" width="382" height="22"/>
+                    <rect key="frame" x="78" y="48" width="382" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" placeholderString="The notification of event status" drawsBackground="YES" id="4Rk-1s-7sz">
                         <font key="font" metaFont="system"/>
@@ -134,12 +139,15 @@
                     </buttonCell>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pY4-uK-CfY">
-                    <rect key="frame" x="400" y="13" width="66" height="32"/>
+                    <rect key="frame" x="400" y="12" width="66" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Test" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZN9-dE-nTm">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="onClickMailgunTestButton:" target="-2" id="NY2-Mz-Kde"/>
+                    </connections>
                 </button>
             </subviews>
             <point key="canvasLocation" x="139" y="174.5"/>

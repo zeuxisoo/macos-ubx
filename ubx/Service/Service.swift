@@ -8,7 +8,7 @@ class Service {
     
     static let sharedInstance = Service()
     
-    private var agent: Alamofire.SessionManager?
+    var agent: Alamofire.SessionManager?
     
     private init() {
         // Init web agnet

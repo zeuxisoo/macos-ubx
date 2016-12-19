@@ -28,6 +28,7 @@
 		E6EEB5F51E027C3F000D24AF /* GeneralPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6EEB5F31E027C3F000D24AF /* GeneralPreferenceViewController.xib */; };
 		E6F34CF31E03ECAF00DE1CE0 /* MailgunPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F34CF11E03ECAF00DE1CE0 /* MailgunPreferenceViewController.swift */; };
 		E6F34CF41E03ECAF00DE1CE0 /* MailgunPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F34CF21E03ECAF00DE1CE0 /* MailgunPreferenceViewController.xib */; };
+		E6F55AA81E07B42F006BC5A5 /* Service+Mailgun.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F55AA71E07B42F006BC5A5 /* Service+Mailgun.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		E6EEB5F31E027C3F000D24AF /* GeneralPreferenceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralPreferenceViewController.xib; sourceTree = "<group>"; };
 		E6F34CF11E03ECAF00DE1CE0 /* MailgunPreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailgunPreferenceViewController.swift; sourceTree = "<group>"; };
 		E6F34CF21E03ECAF00DE1CE0 /* MailgunPreferenceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MailgunPreferenceViewController.xib; sourceTree = "<group>"; };
+		E6F55AA71E07B42F006BC5A5 /* Service+Mailgun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Service+Mailgun.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			children = (
 				E64BA8CC1DF7D00C0066E5EB /* Service.swift */,
 				E64BA8CD1DF7D00C0066E5EB /* Service+Utils.swift */,
+				E6F55AA71E07B42F006BC5A5 /* Service+Mailgun.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				E64BA8DB1DF7D0810066E5EB /* HomeViewController.swift in Sources */,
 				E6937BAE1E02ADD9001323D7 /* Settings.swift in Sources */,
 				E64BA8D81DF7D0740066E5EB /* AppDelegate.swift in Sources */,
+				E6F55AA81E07B42F006BC5A5 /* Service+Mailgun.swift in Sources */,
 				E6F34CF31E03ECAF00DE1CE0 /* MailgunPreferenceViewController.swift in Sources */,
 				E64BA8D51DF7D0590066E5EB /* Event.swift in Sources */,
 				E64BA8D21DF7D0260066E5EB /* PerformanceDataResponse.swift in Sources */,
