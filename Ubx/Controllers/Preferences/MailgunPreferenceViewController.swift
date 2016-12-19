@@ -17,9 +17,23 @@ class MailgunPreferenceViewController: NSViewController {
     @IBOutlet weak var mailboxFromTextField: NSTextField!
     @IBOutlet weak var mailboxToTextField: NSTextField!
     @IBOutlet weak var mailboxSubjectTextField: NSTextField!
+        
+    var settings = Settings.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.mailgunDomainTextField.delegate  = self
+        self.mailgunApiKeyTextField.delegate  = self
+        self.mailboxFromTextField.delegate    = self
+        self.mailboxToTextField.delegate      = self
+        self.mailboxSubjectTextField.delegate = self
+        
+        self.mailgunDomainTextField.stringValue  = self.settings.mailgunDomain
+        self.mailgunApiKeyTextField.stringValue  = self.settings.mailgunApiKey
+        self.mailboxFromTextField.stringValue    = self.settings.mailboxFrom
+        self.mailboxToTextField.stringValue      = self.settings.mailboxTo
+        self.mailboxSubjectTextField.stringValue = self.settings.mailboxSubject
     }
     
     // MARK: - Handle interface action
@@ -74,6 +88,38 @@ class MailgunPreferenceViewController: NSViewController {
         }
     }
 
+}
+
+// MARK: - Implement NS
+extension MailgunPreferenceViewController: NSTextFieldDelegate {
+    
+    func control(_ control: NSControl, textShouldEndEditing fieldEditor: NSText) -> Bool {
+        let textField = control as! NSTextField
+        let identifier = textField.identifier!
+        
+        if identifier == "MailgunDomain" {
+            self.settings.mailgunDomain = fieldEditor.string!
+        }
+        
+        if identifier == "MailgunApiKey" {
+            self.settings.mailgunApiKey = fieldEditor.string!
+        }
+
+        if identifier == "MailboxFrom" {
+            self.settings.mailboxFrom = fieldEditor.string!
+        }
+
+        if identifier == "MailboxTo" {
+            self.settings.mailboxTo = fieldEditor.string!
+        }
+
+        if identifier == "MailboxSubject" {
+            self.settings.mailboxSubject = fieldEditor.string!
+        }
+        
+        return true
+    }
+    
 }
 
 // MARK: - Implement MASPreferencesViewController protocol methods
