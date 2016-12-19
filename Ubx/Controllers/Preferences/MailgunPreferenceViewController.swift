@@ -13,11 +13,14 @@ class MailgunPreferenceViewController: NSViewController {
 
     @IBOutlet weak var mailgunDomainTextField: NSTextField!
     @IBOutlet weak var mailgunApiKeyTextField: NSTextField!
+    @IBOutlet weak var mailgunEnableCheckbox: NSButton!
     
     @IBOutlet weak var mailboxFromTextField: NSTextField!
     @IBOutlet weak var mailboxToTextField: NSTextField!
     @IBOutlet weak var mailboxSubjectTextField: NSTextField!
-        
+    
+    typealias ValidateAllTextFieldSuccess = (_ domain: String, _ apiKey: String, _ from: String, _ to: String, _ subject: String) -> Void
+    
     var settings = Settings.sharedInstance
     
     override func viewDidLoad() {
@@ -34,27 +37,13 @@ class MailgunPreferenceViewController: NSViewController {
         self.mailboxFromTextField.stringValue    = self.settings.mailboxFrom
         self.mailboxToTextField.stringValue      = self.settings.mailboxTo
         self.mailboxSubjectTextField.stringValue = self.settings.mailboxSubject
+        
+        self.mailgunEnableCheckbox.state = self.settings.mailgunEnable ? NSOnState : NSOffState
     }
     
     // MARK: - Handle interface action
     @IBAction func onClickMailgunTestButton(_ sender: Any) {
-        let domain  = self.mailgunDomainTextField.stringValue
-        let apiKey  = self.mailgunApiKeyTextField.stringValue
-        let from    = self.mailboxFromTextField.stringValue
-        let to      = self.mailboxToTextField.stringValue
-        let subject = self.mailboxSubjectTextField.stringValue
-        
-        if domain.isEmpty == true {
-            self.showAlert(message: "Please enter mailgun domain")
-        }else if apiKey.isEmpty == true {
-            self.showAlert(message: "Please enter mailgun api key")
-        }else if from.isEmpty == true {
-            self.showAlert(message: "Please enter from address for mailbox")
-        }else if to.isEmpty == true {
-            self.showAlert(message: "Please enter to address for mailbox")
-        }else if subject.isEmpty == true {
-            self.showAlert(message: "Please enter subject for mailbox")
-        }else{
+        self.validateAllTextField { (domain, apiKey, from, to, subject) in
             Service.sharedInstance.sendMail(
                 domain: domain,
                 apiKey: apiKey,
@@ -64,10 +53,25 @@ class MailgunPreferenceViewController: NSViewController {
                 success: { (id, message) in
                     if id.isEmpty == false && message.isEmpty == false {
                         self.showAlert(message: "Success! Mail sent")
+                        self.saveAllTextField()
                     }
                 },
                 failure: { error in
                     self.showAlert(message: "Error: \(error.localizedDescription)")
+                }
+            )
+        }
+    }
+    
+    @IBAction func onClickMailgunEnableCheckbox(_ sender: Any) {
+        if let enableCheckbox = sender as? NSButton {
+            self.validateAllTextField(
+                success: { (domain, apiKey, from, to, subject) in
+                    self.settings.mailgunEnable = enableCheckbox.state == NSOnState
+                    self.saveAllTextField()
+                },
+                failure: {
+                    enableCheckbox.state = NSOffState
                 }
             )
         }
@@ -86,6 +90,45 @@ class MailgunPreferenceViewController: NSViewController {
             if modalResponse == NSAlertFirstButtonReturn {
             }
         }
+    }
+    
+    private func validateAllTextField(success: ValidateAllTextFieldSuccess) {
+        self.validateAllTextField(success: success, failure: {})
+    }
+    
+    private func validateAllTextField(success: ValidateAllTextFieldSuccess, failure: () -> Void) {
+        let domain  = self.mailgunDomainTextField.stringValue
+        let apiKey  = self.mailgunApiKeyTextField.stringValue
+        let from    = self.mailboxFromTextField.stringValue
+        let to      = self.mailboxToTextField.stringValue
+        let subject = self.mailboxSubjectTextField.stringValue
+        
+        if domain.isEmpty == true {
+            self.showAlert(message: "Please enter mailgun domain")
+            failure()
+        }else if apiKey.isEmpty == true {
+            self.showAlert(message: "Please enter mailgun api key")
+            failure()
+        }else if from.isEmpty == true {
+            self.showAlert(message: "Please enter from address for mailbox")
+            failure()
+        }else if to.isEmpty == true {
+            self.showAlert(message: "Please enter to address for mailbox")
+            failure()
+        }else if subject.isEmpty == true {
+            self.showAlert(message: "Please enter subject for mailbox")
+            failure()
+        }else{
+            success(domain, apiKey, from, to, subject)
+        }
+    }
+    
+    private func saveAllTextField() {
+        self.settings.mailgunDomain  = self.mailgunDomainTextField.stringValue
+        self.settings.mailgunApiKey  = self.mailgunApiKeyTextField.stringValue
+        self.settings.mailboxFrom    = self.mailboxFromTextField.stringValue
+        self.settings.mailboxTo      = self.mailboxToTextField.stringValue
+        self.settings.mailboxSubject = self.mailboxSubjectTextField.stringValue
     }
 
 }
