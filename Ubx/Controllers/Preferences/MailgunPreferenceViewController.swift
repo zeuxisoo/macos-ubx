@@ -41,6 +41,10 @@ class MailgunPreferenceViewController: NSViewController {
         self.mailgunEnableCheckbox.state = self.settings.mailgunEnable ? NSOnState : NSOffState
     }
     
+    override func viewDidDisappear() {
+        self.saveAllSettings()
+    }
+    
     // MARK: - Handle interface action
     @IBAction func onClickMailgunTestButton(_ sender: Any) {
         self.validateAllTextField { (domain, apiKey, from, to, subject) in
@@ -67,8 +71,7 @@ class MailgunPreferenceViewController: NSViewController {
         if let enableCheckbox = sender as? NSButton {
             self.validateAllTextField(
                 success: { (domain, apiKey, from, to, subject) in
-                    self.settings.mailgunEnable = enableCheckbox.state == NSOnState
-                    self.saveAllTextField()
+                    self.saveAllSettings()
                 },
                 failure: {
                     enableCheckbox.state = NSOffState
@@ -129,6 +132,12 @@ class MailgunPreferenceViewController: NSViewController {
         self.settings.mailboxFrom    = self.mailboxFromTextField.stringValue
         self.settings.mailboxTo      = self.mailboxToTextField.stringValue
         self.settings.mailboxSubject = self.mailboxSubjectTextField.stringValue
+    }
+    
+    private func saveAllSettings() {
+        self.saveAllTextField()
+        
+        self.settings.mailgunEnable = self.mailgunEnableCheckbox.state == NSOnState
     }
 
 }
