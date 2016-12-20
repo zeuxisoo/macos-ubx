@@ -105,7 +105,7 @@ class HomeViewController: NSViewController {
                                     // Show notification when events status contain AVAILABLE
                                     if events.count > 0 {
                                         let availableEvents = events.map({ event in
-                                            return event.status.uppercased() == "AVAILABLE"
+                                            return event.status.uppercased() == "AVAILABLE" || event.status.uppercased() == "LIMITED"
                                         })
                                         
                                         if availableEvents.count > 0 {
