@@ -30,6 +30,8 @@ class HomeViewController: NSViewController {
     
     var serviceAgent = Service.sharedInstance
     
+    var settings = Settings.sharedInstance
+    
     var events = [Event]()
     
     override func viewDidLoad() {
@@ -106,8 +108,28 @@ class HomeViewController: NSViewController {
                                             return event.status.uppercased() == "AVAILABLE"
                                         })
                                         
-                                        if availableEvents.count > 0 && self.notificationCheckbox.state == NSOnState {
-                                            self.makeNotification(title: "Wow", message: "\(events.first!.name) is available")
+                                        if availableEvents.count > 0 {
+                                            if self.notificationCheckbox.state == NSOnState {
+                                                self.makeNotification(title: "Wow", message: "\(events.first!.name) is available")
+                                            }
+                                            
+                                            if self.settings.mailgunEnable == true {
+                                                self.serviceAgent.sendMail(
+                                                    domain: self.settings.mailgunDomain,
+                                                    apiKey: self.settings.mailgunApiKey,
+                                                    from: self.settings.mailboxFrom,
+                                                    to: self.settings.mailboxTo,
+                                                    subject: "\(self.settings.mailboxSubject) - Event Id: \(eventId)",
+                                                    success: { (id, message) in
+                                                        if id.isEmpty == false && message.isEmpty == false {
+                                                            // Not thing to do when success
+                                                        }
+                                                    },
+                                                    failure: { error in
+                                                        self.showAlert(message: "\(error.localizedDescription)")
+                                                    }
+                                                )
+                                            }
                                         }
                                     }
                                 },
