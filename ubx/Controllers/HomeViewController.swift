@@ -184,8 +184,6 @@ class HomeViewController: NSViewController {
                 self.proxyHostTextField.isEditable = false
                 self.proxyPortTextField.isEditable = false
                 
-                self.proxyEnableCheckbox.title = "Enabled Proxy"
-                
                 self.serviceAgent = self.serviceAgent.withProxy(
                     host: host,
                     port: Int(port)!
@@ -193,8 +191,6 @@ class HomeViewController: NSViewController {
             }else{
                 self.proxyHostTextField.isEditable = true
                 self.proxyPortTextField.isEditable = true
-                
-                self.proxyEnableCheckbox.title = "Enable Proxy"
                 
                 self.serviceAgent = Service.sharedInstance
             }
