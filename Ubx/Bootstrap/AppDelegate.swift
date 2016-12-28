@@ -56,7 +56,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Add menu item
         menu.addItem(NSMenuItem(title: "Show", action: #selector(self.activateApplication), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApp.terminate), keyEquivalent: "q"))
+        menu.addItem(NSMenuItem(title: "Quit", action: #selector(self.quitApplication), keyEquivalent: "q"))
         
         // Set menu for menu icon
         self.statusItem.menu = menu
@@ -71,6 +71,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Menu item methods
     func activateApplication() {
         NSApp.activate(ignoringOtherApps: true)
+    }
+    
+    func quitApplication() {
+        NSApp.terminate(self)
     }
     
 }
