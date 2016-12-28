@@ -29,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     // MARK: - Application lifecycle
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        self.enableStatusIcon()
+        self.showStatusIcon()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -49,7 +49,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.preferencesWindowController.showWindow(nil)
     }
     
-    private func enableStatusIcon() {
+    private func showStatusIcon() {
         // Create menu
         let menu = NSMenu()
         
@@ -66,6 +66,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.image = NSImage(named: "StatusBarButtonImage")
             button.toolTip = "Ubx"
         }
+    }
+    
+    private func hideStatusIcon() {
+        NSStatusBar.system().removeStatusItem(statusItem)
     }
     
     // MARK: - Menu item methods
