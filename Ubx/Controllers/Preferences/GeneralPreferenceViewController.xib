@@ -11,6 +11,7 @@
                 <outlet property="fetchEachPageRecordComboBox" destination="LG7-Bf-Scs" id="fO8-BR-mie"/>
                 <outlet property="fetchPageNoComboBox" destination="yjB-bf-vh3" id="gN6-u6-odh"/>
                 <outlet property="userAgentsTableView" destination="0yp-HJ-tPZ" id="cmV-RF-Bvr"/>
+                <outlet property="userInterfaceDisplayMenuBarIcon" destination="yWk-2y-CKU" id="zDX-ap-vCp"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -193,6 +194,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="onClickUserInterfaceDisplayMenuBarIconCheckbox:" target="-2" id="5Ia-76-A6R"/>
+                    </connections>
                 </button>
             </subviews>
             <point key="canvasLocation" x="-3153" y="82"/>

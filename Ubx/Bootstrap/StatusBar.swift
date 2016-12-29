@@ -11,10 +11,14 @@ import Cocoa
 class StatusBar: NSObject {
     
     static let sharedInstance = StatusBar()
+       
+    var statusItem: NSStatusItem?
     
-    let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
-    
+    // MARK: - Menu controls
     func showStatusIcon() {
+        // Get status item place
+        self.statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
+        
         // Create menu items
         let showMenuItem = NSMenuItem()
         showMenuItem.title = "Show"
@@ -35,17 +39,17 @@ class StatusBar: NSObject {
         menu.addItem(quitMenuItem)
         
         // Set menu into menu icon
-        self.statusItem.menu = menu
+        self.statusItem!.menu = menu
         
         // Setup menu icon
-        if let button = self.statusItem.button {
+        if let button = self.statusItem!.button {
             button.image = NSImage(named: "StatusBarButtonImage")
             button.toolTip = "Ubx"
         }
     }
     
     func hideStatusIcon() {
-        NSStatusBar.system().removeStatusItem(statusItem)
+        NSStatusBar.system().removeStatusItem(self.statusItem!)
     }
     
     // MARK: - Menu item methods

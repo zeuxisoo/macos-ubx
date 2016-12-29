@@ -27,7 +27,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     // MARK: - Application lifecycle
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        StatusBar.sharedInstance.showStatusIcon()
+        if Settings.sharedInstance.userInterfaceDisplayMenuBarIcon == true {
+            StatusBar.sharedInstance.showStatusIcon()
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
