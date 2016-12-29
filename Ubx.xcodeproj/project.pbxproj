@@ -24,6 +24,7 @@
 		E64BA8DF1DF7E0400066E5EB /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64BA8DE1DF7E0400066E5EB /* Document.swift */; };
 		E678193E1DF80E8A007D2DA7 /* MyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E678193D1DF80E8A007D2DA7 /* MyWindow.swift */; };
 		E6937BAE1E02ADD9001323D7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6937BAD1E02ADD9001323D7 /* Settings.swift */; };
+		E6A9F78D1E14E499006B533B /* StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A9F78C1E14E499006B533B /* StatusBar.swift */; };
 		E6EEB5F41E027C3F000D24AF /* GeneralPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EEB5F21E027C3F000D24AF /* GeneralPreferenceViewController.swift */; };
 		E6EEB5F51E027C3F000D24AF /* GeneralPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6EEB5F31E027C3F000D24AF /* GeneralPreferenceViewController.xib */; };
 		E6F34CF31E03ECAF00DE1CE0 /* MailgunPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F34CF11E03ECAF00DE1CE0 /* MailgunPreferenceViewController.swift */; };
@@ -53,6 +54,7 @@
 		E64BA8DE1DF7E0400066E5EB /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		E678193D1DF80E8A007D2DA7 /* MyWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWindow.swift; sourceTree = "<group>"; };
 		E6937BAD1E02ADD9001323D7 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		E6A9F78C1E14E499006B533B /* StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
 		E6EEB5F21E027C3F000D24AF /* GeneralPreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPreferenceViewController.swift; sourceTree = "<group>"; };
 		E6EEB5F31E027C3F000D24AF /* GeneralPreferenceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralPreferenceViewController.xib; sourceTree = "<group>"; };
 		E6F34CF11E03ECAF00DE1CE0 /* MailgunPreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailgunPreferenceViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				E64BA8D71DF7D0740066E5EB /* MyApplication.swift */,
 				E678193D1DF80E8A007D2DA7 /* MyWindow.swift */,
 				E6937BAD1E02ADD9001323D7 /* Settings.swift */,
+				E6A9F78C1E14E499006B533B /* StatusBar.swift */,
 			);
 			path = Bootstrap;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				E6EEB5F41E027C3F000D24AF /* GeneralPreferenceViewController.swift in Sources */,
 				E64BA8D91DF7D0740066E5EB /* MyApplication.swift in Sources */,
 				E64BA8D31DF7D0260066E5EB /* PerformancesResponse.swift in Sources */,
+				E6A9F78D1E14E499006B533B /* StatusBar.swift in Sources */,
 				E64BA8CE1DF7D00C0066E5EB /* Service.swift in Sources */,
 				E678193E1DF80E8A007D2DA7 /* MyWindow.swift in Sources */,
 				E64BA8DD1DF7DEA30066E5EB /* MainWindowController.swift in Sources */,
