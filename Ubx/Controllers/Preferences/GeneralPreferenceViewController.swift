@@ -14,12 +14,16 @@ class GeneralPreferenceViewController: NSViewController {
     @IBOutlet weak var fetchPageNoComboBox: NSComboBox!
     @IBOutlet weak var fetchEachPageRecordComboBox: NSComboBox!
     @IBOutlet weak var userAgentsTableView: NSTableView!
+    @IBOutlet weak var userInterfaceDisplayMenuBarIcon: NSButton!
     
     let settings = Settings.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Set the user interface
+        self.userInterfaceDisplayMenuBarIcon.state = self.settings.userInterfaceDisplayMenuBarIcon ? NSOnState : NSOffState
+        
         // Set the default value to 2 fetch combo boxes
         self.fetchPageNoComboBox.cell?.title = String(self.settings.fetchPageNo)
         self.fetchEachPageRecordComboBox.cell?.title = String(self.settings.fetchEachPageRecord)
@@ -83,6 +87,17 @@ class GeneralPreferenceViewController: NSViewController {
         self.userAgentsTableView.reloadData()
     }
     
+    @IBAction func onClickUserInterfaceDisplayMenuBarIconCheckbox(_ sender: Any) {
+        self.settings.userInterfaceDisplayMenuBarIcon = !self.settings.userInterfaceDisplayMenuBarIcon
+        debugPrint((sender as! NSButton).state)
+        debugPrint(self.settings.userInterfaceDisplayMenuBarIcon)
+        if (sender as! NSButton).state == NSOnState {
+            StatusBar.sharedInstance.showStatusIcon()
+        }else{
+            StatusBar.sharedInstance.hideStatusIcon()
+        }
+    }
+
 }
 
 // MARK: - Implement  NSComboBox delegate methods

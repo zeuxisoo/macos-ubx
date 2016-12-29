@@ -32,6 +32,11 @@ class Settings {
     }
     
     // MARK: - General settings
+    var userInterfaceDisplayMenuBarIcon: Bool {
+        set { self.set(name: "user_interface_display_menu_bar_icon", value: newValue) }
+        get { return self.get(name: "user_interface_display_menu_bar_icon") as? Bool ?? true }
+    }
+    
     var fetchPageNo: Int {
         set { self.set(name: "fetch_page_no", value: newValue) }
         get { return self.get(name: "fetch_page_no") as? Int ?? 1 }
