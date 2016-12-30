@@ -77,12 +77,12 @@ class Service {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.seconds(1) , execute: {
                 self.agent!.request(targetURL, method: .get).responseObject(completionHandler: { (response: DataResponse<PerformanceDataResponse>) in
                     switch response.result {
-                    case .success:
-                        let performanceData = response.result.value!
-                        
-                        fulfill(performanceData)
-                    case .failure(let error):
-                        reject(error)
+                        case .success:
+                            let performanceData = response.result.value!
+                            
+                            fulfill(performanceData)
+                        case .failure(let error):
+                            reject(error)
                     }
                 })
             })
