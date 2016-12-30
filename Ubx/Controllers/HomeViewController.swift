@@ -146,7 +146,7 @@ class HomeViewController: NSViewController {
                                                         }
                                                     },
                                                     failure: { error in
-                                                        self.showAlert(message: "\(error.localizedDescription)")
+                                                        self.showAlert(message: "Mailgun:\n\n\(error.localizedDescription)")
                                                     }
                                                 )
                                             }
