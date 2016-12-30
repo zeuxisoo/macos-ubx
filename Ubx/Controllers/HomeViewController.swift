@@ -47,6 +47,13 @@ class HomeViewController: NSViewController {
             name: NotificationName.App.DidClickOnMenuItemMonit,
             object: nil
         )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(onClickMonitButton(_:)),
+            name: NotificationName.App.DidClickOnMenuItemStop,
+            object: nil
+        )
     }
 
     override var representedObject: Any? {
@@ -168,6 +175,12 @@ class HomeViewController: NSViewController {
                 self.repeatTimer = nil
                 
                 self.resetAllControlWhenMonitStop()
+                
+                // Broadcast event
+                NotificationCenter.default.post(
+                    name: NotificationName.App.DidMonitStop,
+                    object: nil
+                )
                 break
             default:
                 break

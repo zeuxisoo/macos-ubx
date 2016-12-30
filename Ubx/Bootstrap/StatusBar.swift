@@ -62,6 +62,13 @@ class StatusBar: NSObject {
             name: NotificationName.App.DidMonitStart,
             object: nil
         )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(monitStop),
+            name: NotificationName.App.DidMonitStop,
+            object: nil
+        )
     }
     
     func hideStatusIcon() {
@@ -90,7 +97,10 @@ class StatusBar: NSObject {
                     object: nil
                 )
             case "Stop":
-                monitMenuItem!.title = "Monit"
+                NotificationCenter.default.post(
+                    name: NotificationName.App.DidClickOnMenuItemStop,
+                    object: nil
+                )
             default:
                 break
         }
@@ -99,6 +109,10 @@ class StatusBar: NSObject {
     // MARK: - Observer action handlers
     func monitStart() {
         self.statusItem!.menu!.item(withTitle: "Monit")?.title = "Stop"
+    }
+    
+    func monitStop() {
+        self.statusItem!.menu!.item(withTitle: "Stop")?.title = "Monit"
     }
     
 }
