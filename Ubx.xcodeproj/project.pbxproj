@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D7874586B2D2C43E875F088C /* Pods_Ubx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6CD0BFAF452D7AB460F1A5 /* Pods_Ubx.framework */; };
+		E6033F061E16309000869A79 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6033F051E16309000869A79 /* NotificationName.swift */; };
 		E621BA831DF919C500870C91 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E621BA821DF919C500870C91 /* MyTextField.swift */; };
 		E621BA8D1DF9330100870C91 /* MyButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E621BA8C1DF9330100870C91 /* MyButtonCell.swift */; };
 		E648D1E61DF7CBFB00E0801B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E648D1E51DF7CBFB00E0801B /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		2E6CD0BFAF452D7AB460F1A5 /* Pods_Ubx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ubx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0318AD1C3E28AAD3AC3ABC /* Pods-Ubx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ubx.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ubx/Pods-Ubx.release.xcconfig"; sourceTree = "<group>"; };
 		BE83B1344FFFF3F371594541 /* Pods-Ubx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ubx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ubx/Pods-Ubx.debug.xcconfig"; sourceTree = "<group>"; };
+		E6033F051E16309000869A79 /* NotificationName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		E621BA821DF919C500870C91 /* MyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		E621BA8C1DF9330100870C91 /* MyButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyButtonCell.swift; sourceTree = "<group>"; };
 		E648D1DC1DF7CBFB00E0801B /* Ubx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ubx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				E64BA8D41DF7D0590066E5EB /* Event.swift */,
+				E6033F051E16309000869A79 /* NotificationName.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				E64BA8DB1DF7D0810066E5EB /* HomeViewController.swift in Sources */,
 				E6937BAE1E02ADD9001323D7 /* Settings.swift in Sources */,
 				E64BA8D81DF7D0740066E5EB /* AppDelegate.swift in Sources */,
+				E6033F061E16309000869A79 /* NotificationName.swift in Sources */,
 				E6F55AA81E07B42F006BC5A5 /* Service+Mailgun.swift in Sources */,
 				E6F34CF31E03ECAF00DE1CE0 /* MailgunPreferenceViewController.swift in Sources */,
 				E64BA8D51DF7D0590066E5EB /* Event.swift in Sources */,

@@ -39,11 +39,23 @@ class HomeViewController: NSViewController {
         
         self.eventListTableView.delegate = self
         self.eventListTableView.dataSource = self
+        
+        // Observer click event on monit in status bar menu item
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(onClickMonitButton(_:)),
+            name: NotificationName.App.DidClickOnMenuItemMonit,
+            object: nil
+        )
     }
 
     override var representedObject: Any? {
         didSet {
         }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - Handle interface actions
@@ -91,7 +103,8 @@ class HomeViewController: NSViewController {
                     self.showAlert(message: "Timer seconds must bigger than 0")
                 }else{
                     self.disableAllControlWhenMonitStart()
-
+                    
+                    // Monit loop timer
                     self.repeatTimer = Timer(
                         timeInterval: Double(timerSecond)!,
                         repeats: true,
@@ -142,6 +155,12 @@ class HomeViewController: NSViewController {
                     self.repeatTimer?.fire()
                     
                     RunLoop.main.add(self.repeatTimer!, forMode: RunLoopMode.defaultRunLoopMode)
+                    
+                    // Broadcast event
+                    NotificationCenter.default.post(
+                        name: NotificationName.App.DidMonitStart,
+                        object: nil
+                    )
                 }
                 break
             case "stop":

@@ -26,6 +26,12 @@ class StatusBar: NSObject {
         showMenuItem.action = #selector(activateApplication)
         showMenuItem.target = self
         
+        let monitMenuItem = NSMenuItem()
+        monitMenuItem.title = "Monit"
+        monitMenuItem.keyEquivalent = ""
+        monitMenuItem.action = #selector(monitHandler)
+        monitMenuItem.target = self
+        
         let quitMenuItem = NSMenuItem()
         quitMenuItem.title = "Quit"
         quitMenuItem.keyEquivalent = "q"
@@ -35,6 +41,8 @@ class StatusBar: NSObject {
         // Create menu
         let menu = NSMenu()
         menu.addItem(showMenuItem)
+        menu.addItem(NSMenuItem.separator())
+        menu.addItem(monitMenuItem)
         menu.addItem(NSMenuItem.separator())
         menu.addItem(quitMenuItem)
         
@@ -46,10 +54,21 @@ class StatusBar: NSObject {
             button.image = NSImage(named: "StatusBarButtonImage")
             button.toolTip = "Ubx"
         }
+        
+        // Observer monit event (start / stop) sent from HomeViewController
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(monitStart),
+            name: NotificationName.App.DidMonitStart,
+            object: nil
+        )
     }
     
     func hideStatusIcon() {
         NSStatusBar.system().removeStatusItem(self.statusItem!)
+        
+        // Remove observer
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - Menu item methods
@@ -59,6 +78,27 @@ class StatusBar: NSObject {
     
     func quitApplication() {
         NSApp.terminate(self)
+    }
+    
+    func monitHandler() {
+        let monitMenuItem = self.statusItem!.menu!.item(withTitle: "Monit") ?? self.statusItem!.menu!.item(withTitle: "Stop")
+        
+        switch monitMenuItem!.title {
+            case "Monit":
+                NotificationCenter.default.post(
+                    name: NotificationName.App.DidClickOnMenuItemMonit,
+                    object: nil
+                )
+            case "Stop":
+                monitMenuItem!.title = "Monit"
+            default:
+                break
+        }
+    }
+    
+    // MARK: - Observer action handlers
+    func monitStart() {
+        self.statusItem!.menu!.item(withTitle: "Monit")?.title = "Stop"
     }
     
 }
